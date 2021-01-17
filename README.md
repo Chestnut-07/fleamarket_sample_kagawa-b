@@ -24,7 +24,6 @@
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
 |trading_status|integer|null: false|
-|item_image|string|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
 |category_id|references|null: false, foreign_key: true|
@@ -82,6 +81,15 @@
 ### Association
 - belongs_to :user
 
+## Item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|image1_url|string|null: false|
+
+### Association
+- belongs_to :item
+
 
 ## 以降は今後追加実装予定の項目である
 ### Usersテーブル
@@ -137,8 +145,7 @@
 ## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-url|string|null: false|
-
-### Association
-- belongs_to :product
+|image2_url|string|-|
+|image3_url|string|-|
+|image4_url|string|-|
+|image5_url|string|-|
