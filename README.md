@@ -58,7 +58,7 @@
 |card_token|string|null: false|
 
 ### Association
-- belongs_to :user
+- belongs_to :user, optional: true
 
 ## Destinationsテーブル
 |Column|Type|Options|
@@ -82,4 +82,4 @@
 |image|string|null: false|
 
 ### Association
-- belongs_to :item
+- belongs_to :item, optional: true
