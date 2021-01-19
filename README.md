@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :items, dependent: :destroy
-- has_one :sending_destination, dependent: :destroy
+- has_one :destination, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 
 ## Itemsテーブル
@@ -43,7 +43,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|string|null: false, add_index|
+|ancestry|string|add_index|
 
 ### Association
 - has_many :items
@@ -52,9 +52,9 @@
 ## Credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|customer_id|string|null: false|
-|card_id|string|null: false|
+|user|references|null: false, foreign_key: true|
+|customer_token|string|null: false|
+|card_token|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -62,10 +62,6 @@
 ## Destinationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|destination_first_name|string|null: false|
-|destination_family_name|string|null: false|
-|destination_first_name_kana|string|null: false|
-|destination_family_name_kana|string|null: false|
 |post_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -80,8 +76,8 @@
 ## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|image1_url|string|null: false|
+|item|references|null: false, foreign_key: true|
+|image|string|null: false|
 
 ### Association
 - belongs_to :item
