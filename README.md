@@ -19,10 +19,10 @@
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false|
 |seller|references|null: false, foreign_key: { to_table: :users }|
 |buyer|references|foreign_key: foreign_key: { to_table: :users }|
 |trading_status|integer|null: false|
-|name|string|null: false|
 |introduction|text|null: false|
 |category|references|null: false, foreign_key: true|
 |item_condition|integer|null: false|
@@ -69,7 +69,7 @@
 |house_number|string|null: false|
 |building_name|string|-|
 |phone_number|string|-|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
