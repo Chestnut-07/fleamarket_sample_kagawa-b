@@ -19,8 +19,8 @@
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|references|null: false, foreign_key: true|
-|buyer_id|references|foreign_key: true|
+|seller|references|null: false, foreign_key: { to_table: :users }|
+|buyer|references|foreign_key: foreign_key: { to_table: :users }|
 |trading_status|integer|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
@@ -33,8 +33,6 @@
 
 ### Association
 - belongs_to :user
-- belongs_tp :seller, class_name: "User"
-- belongs_tp :buyer, class_name: "User"
 - belongs_to :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_fee_payer
