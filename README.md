@@ -4,7 +4,7 @@
 |------|----|-------|
 |nickname|string|null: false|
 |encrypted_password|string|null: false|
-|email|string|null: false|unique: true|
+|email|string|null: false|
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -13,8 +13,6 @@
 
 ### Association
 - has_many :items, dependent: :destroy
-- has_many :sold_items, foreign_key: "seller_id", class_name: "Items"
-- has_many :bought_items, foreign_key: "buyer_id", class_name: "Items"
 - has_one :sending_destination, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 
