@@ -25,10 +25,10 @@
 |name|string|null: false|
 |introduction|text|null: false|
 |category|references|null: false, foreign_key: true|
-|item_condition|references|null: false, foreign_key: true|
-|shipping_fee_payer|references|null: false, foreign_key: true|
-|prefecture|references|null: false, foreign_key: true|
-|preparation_day|references|null: false, foreign_key: true|
+|item_condition|integer|null: false|
+|shipping_fee_payer|integer|null: false|
+|prefecture|integer|null: false|
+|preparation_day|integer|null: false|
 |price|integer|null: false|
 
 ### Association
@@ -63,8 +63,8 @@
 ## Destinationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|integer|null: false|
-|prefecture|string|null: false|
+|post_code|string|null: false|
+|prefecture|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|-|
