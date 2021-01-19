@@ -33,6 +33,7 @@
 
 ### Association
 - belongs_to :user
+- has_one :item_image
 - belongs_to :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_fee_payer
