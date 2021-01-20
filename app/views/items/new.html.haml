@@ -49,5 +49,11 @@
           %span.FormItemPanel__Require
             必須
           = f.select :categories, [['レディース', "women"], ['メンズ', "men"], ['ベビー・キッズ', "baby_kid"], ['スマホ・タブレット', "phone_tablet"], ['ゲーム', "game"], ['おもちゃ・ホビーグッズ', "toy"], ['本・メディア', "book_media"], ['チケット', "ticket"], ['スポーツ・レジャー', "sport_leisure"]], { include_blank: '--選択してください--'}, { id: "categories", required: true}
+        .FormItemPanel__Contentbox.Notfirst
+          %label{:for =>"status"}
+            ブランド
+          %span.FormItemPanel__Any
+            任意
+          = f.text_field :trading_status, id: "status",placeholder: "例)HERMES"
       %hr.FormItemPanel__Separator
         %hr.FormItemPanel__Separator
