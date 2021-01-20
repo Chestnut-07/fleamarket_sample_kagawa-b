@@ -206,3 +206,7 @@
     ul {
       display: flex;
       justify-content: center;
+      li {
+        display: inline-block;
+        margin-left: 16px;
+      }
