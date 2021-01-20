@@ -222,3 +222,17 @@
   }
 }
 .RegistrationForm {
+  input {
+    height: 48px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    display: inline-flex;
+    width: 100%;
+    margin-top: 16px;
+  } 
