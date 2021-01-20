@@ -100,4 +100,9 @@
           %span.FormItemPanel__Doller
             ¥
           = f.number_field :price, id: "Price",class: "FormItemPanel__Price", placeholder: "0", required: true
+        .FormItemPanel__Sellprice
+          %p.FormItemPanel__Sellbox
+            販売手数料(10%)
+          %span.FormItemPanel__Feevalue
+            ー
         %hr.FormItemPanel__Separator
