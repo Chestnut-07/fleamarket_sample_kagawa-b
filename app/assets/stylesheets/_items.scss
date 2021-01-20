@@ -94,3 +94,12 @@
         text-align: center;
         width: 100%;
       }
+      &__Separator {
+        border-top-color: #efefef;
+        border-left: 0 solid #efefef;
+        border-bottom: 0 solid #efefef;
+        border-right: 0 solid #efefef;
+        border-top-style: solid;
+        border-top-width: 1px;
+        margin: 0px;
+      }
