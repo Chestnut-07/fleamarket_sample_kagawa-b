@@ -55,3 +55,15 @@
       &__image {
         display: flex;
       }
+      &__Imagebox {
+        display: flex;
+        width: 620px;
+        height: 150px;
+        place-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        border: 1px dashed #cccccc;
+        cursor: pointer;
+        position: relative;
+        margin-top: 16px
+      }
