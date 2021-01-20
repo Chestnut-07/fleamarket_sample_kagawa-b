@@ -16,3 +16,7 @@
           .FormItemPanel__Imagebox
             = f.label :image, class: "FormItemPanel__Inputimage" do
               = f.file_field :image, class: 'Hidden'
+              .FormItemPanel__Cen
+                = icon("fa","camera", class:"FormItemPanel__Icon")
+                %p.FormItemPanel__Image-innerText
+                  クリックしてファイルをアップロード
