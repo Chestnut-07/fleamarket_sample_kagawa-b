@@ -11,3 +11,8 @@
           必須
         %p.FormItemPanel__InnerText
           最大５枚までアップロードできます
+        .FormItemPanel__Image
+          .FormItemPanel__Imagepartition
+          .FormItemPanel__Imagebox
+            = f.label :image, class: "FormItemPanel__Inputimage" do
+              = f.file_field :image, class: 'Hidden'
