@@ -67,4 +67,10 @@
           配送について
           = link_to "#" do
             = icon("far","question-circle")
+        .FormItemPanel__Contentbox.Notfirst
+          %label{:for =>"shipping"}
+            配送料の負担
+          %span.FormItemPanel__Require
+            必須
+          = f.select :shipping_fee_payer, [['送料込み(出品者負担)', "seller"] ,['着払い(購入者負担)', "buyer"]], { include_blank: '--選択してください--'}, { id: "shipping", class: "FormItemPanel__Shipping", required: true}
         %hr.FormItemPanel__Separator
