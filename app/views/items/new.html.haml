@@ -91,4 +91,13 @@
           価格(¥300〜9,999,999)
           = link_to "#" do
             = icon("far","question-circle")
+        .FormItemPanel__Sellprice
+          .FormItemPanel__Sellbox
+            %label{:for => "Price"}
+              販売価格
+            %span.FormItemPanel__Require
+              必須
+          %span.FormItemPanel__Doller
+            ¥
+          = f.number_field :price, id: "Price",class: "FormItemPanel__Price", placeholder: "0", required: true
         %hr.FormItemPanel__Separator
