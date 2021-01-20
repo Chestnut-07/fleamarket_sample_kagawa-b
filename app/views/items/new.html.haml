@@ -4,3 +4,10 @@
       = link_to image_tag("material/logo/logo.png", alt: "サンプル画像"), "/"
   %main.SellNewContainer
     = form_with model: nil, html: {class: "RegistrationForm"}, local: true do |f|
+      .FormItemPanel
+        %label
+          出品画像
+        %span.FormItemPanel__Require
+          必須
+        %p.FormItemPanel__InnerText
+          最大５枚までアップロードできます
