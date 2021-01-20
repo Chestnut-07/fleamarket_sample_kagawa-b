@@ -55,5 +55,11 @@
           %span.FormItemPanel__Any
             任意
           = f.text_field :trading_status, id: "status",placeholder: "例)HERMES"
+        .FormItemPanel__Contentbox.Notfirst
+          %label{:for =>"condition"}
+            商品の状態
+          %span.FormItemPanel__Require
+            必須
+          = f.select :item_condition, [['新品・未使用', "new"], ['未使用に近い', "nearly_new"], ['目立った傷や汚れなし', "no_damage"], ['やや傷や汚れあり', "little_damage"], ['傷や汚れあり', "damage"], ['全体的に状態が悪い', "damage"]], {include_blank: '--選択してください--'}, { id: "condition", required: true}
       %hr.FormItemPanel__Separator
         %hr.FormItemPanel__Separator
