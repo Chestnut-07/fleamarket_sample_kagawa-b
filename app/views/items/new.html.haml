@@ -28,7 +28,7 @@
           %span.FormItemPanel__Require
             必須
           = f.text_field :name, id: "item_name", placeholder: "40文字まで", required: true
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for =>"item_introduction"}
             商品の説明
           %span.FormItemPanel__Require
@@ -43,19 +43,19 @@
       .FormItemPanel
         %p.FormItemPanel__Sub
           商品の詳細
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for =>"categories"}
             カテゴリー名
           %span.FormItemPanel__Require
             必須
           = f.select :categories, [['レディース', "women"], ['メンズ', "men"], ['ベビー・キッズ', "baby_kid"], ['スマホ・タブレット', "phone_tablet"], ['ゲーム', "game"], ['おもちゃ・ホビーグッズ', "toy"], ['本・メディア', "book_media"], ['チケット', "ticket"], ['スポーツ・レジャー', "sport_leisure"]], { include_blank: '--選択してください--'}, { id: "categories", required: true}
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for =>"status"}
             ブランド
           %span.FormItemPanel__Any
             任意
           = f.text_field :trading_status, id: "status",placeholder: "例)HERMES"
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for =>"condition"}
             商品の状態
           %span.FormItemPanel__Require
@@ -67,19 +67,19 @@
           配送について
           = link_to "#" do
             = icon("far","question-circle")
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for =>"shipping"}
             配送料の負担
           %span.FormItemPanel__Require
             必須
           = f.select :shipping_fee_payer, [['送料込み(出品者負担)', "seller"] ,['着払い(購入者負担)', "buyer"]], { include_blank: '--選択してください--'}, { id: "shipping", class: "FormItemPanel__Shipping", required: true}
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for =>"prefecture"}
             発送元の地域
           %span.FormItemPanel__Require
             必須
           = f.select :prefecture, [['北海道', "1"] ,['青森県', "2"], ['岩手県', "3"], ['宮城県', "4"], ['秋田県', "5"], ['山形県', "6"], ['福島県', "7"], ['茨城県', "8"], ['栃木県', "9"], ['群馬県', "10"], ['埼玉県', "11"], ['千葉県', "12"], ['東京都', "13"], ['神奈川県', "14"], ['新潟県', "15"], ['富山県', "16"], ['石川県', "17"], ['福井県', "18"], ['山梨県', "19"], ['長野県', "20"], ['岐阜県', "21"], ['静岡県', "22"], ['愛知県', "23"], ['三重県', "24"], ['滋賀県', "25"], ['京都府', "26"], ['大阪府', "27"], ['兵庫県', "28"], ['奈良県', "29"], ['和歌山県', "30"], ['鳥取県', "31"], ['島根県', "32"], ['岡山県', "33"], ['広島県', "34"], ['山口県', "35"], ['徳島県', "36"], ['香川県', "37"], ['愛媛県', "38"], ['高知県', "39"], ['福岡県', "40"], ['佐賀県', "41"], ['長崎県', "42"], ['熊本県', "43"], ['大分県', "44"], ['宮崎県', "45"], ['鹿児島県', "46"], ['沖縄県', "47"]], { include_blank: '--選択してください--'}, { id: "prefecture", id: "prefecture", required: true}
-        .FormItemPanel__Contentbox.Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{:for => "preparation_day"}
             発送までの日数
           %span.FormItemPanel__Require
@@ -113,9 +113,6 @@
             ー
         .FormItemPanel__Mainfooter
           .FormItemPanel__Btnbox
-            = f.submit "出品する", class: "FormItemPanel__Btn Submit Nbtn"
-            = link_to "下書きに保存", "/", class: "FormItemPanel__Btn Draft Nbtn"
-            = link_to '戻る', "/", class: "Nbtn"
         .FormItemPanel__Mainfooter
           = render partial: "required"
   %footer.SellFooter
