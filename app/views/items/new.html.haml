@@ -27,7 +27,7 @@
             商品名
           %span.FormItemPanel__Require
             必須
-          = f.text_field :name, id: "item_name", placeholder: "40文字まで"
+          = f.text_field :name, id: "item_name", placeholder: "40文字まで", required: true
         .FormItemPanel__Contentbox.Notfirst
           %label{:for =>"item_introduction"}
             商品の説明
