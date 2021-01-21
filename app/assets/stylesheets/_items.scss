@@ -157,33 +157,29 @@
         a {
           margin-top: 24px;
         }
-        .Nbtn {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-        }
-        .Submit {
-          background: #3CCACE;
-          border: 1px solid #3CCACE;
-          color: white;
-          cursor: pointer;
-        }
-        .Draft {
-          height: 48px;
-          font-size: 16px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          font-family: inherit;
-          outline: none;
-          padding: 0 16px;
-          display: inline-flex;
-          text-decoration: none;
-          background-color: #ccc;
-          color: #333;
-          width: 100%;
-        }
+      }
+      &__Nbtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      &__Submit {
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        color: white;
+        cursor: pointer;
+      }
+      &__Draft {
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: inherit;
+        display: inline-flex;
+        background-color: #ccc;
+        color: #333;
+        width: 100%;
       }
       &__Btn {
         font-size: 17px;
