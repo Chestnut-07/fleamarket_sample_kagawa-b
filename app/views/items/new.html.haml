@@ -117,8 +117,7 @@
             = link_to "下書きに保存", "/", class: "FormItemPanel__Btn Draft Nbtn"
             = link_to '戻る', "/", class: "Nbtn"
         .FormItemPanel__Mainfooter
-          %p
-            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。また、出品をもちまして 加盟店規約に同意したことになります。
+          = render partial: "required"
   %footer.SellFooter
     %nav
       %ul
