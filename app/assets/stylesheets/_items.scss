@@ -48,6 +48,16 @@
         line-height: 140%;
         margin-left: 8px;
       }
+      &__Any {
+        background-color: #bfbfbf;
+        color: #fff;
+        font-size: 12px;
+        padding: 0 4px;
+        margin-left: 8px;
+        border-radius: 2px;
+        display: inline-block;
+
+      }
       &__InnerText {
         margin-top: 16px;
         line-height: 140%;
