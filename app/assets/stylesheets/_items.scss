@@ -1,6 +1,7 @@
 .SellContainer {
   $border-color: #efefef;
   $view-background-color: whitesmoke;
+  $str-line-height: 140%;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
@@ -36,7 +37,7 @@
       label {
         font-size: 14px;
         font-weight: 600;
-        line-height: 140%;
+        line-height: $str-line-height;
       }
       &__Require {
         background-color: red;
@@ -47,7 +48,7 @@
         font-style: normal;
         display: inline-block;
         font-weight: 600;
-        line-height: 140%;
+        line-height: $str-line-height;
         margin-left: 8px;
       }
       &__Any {
@@ -62,7 +63,7 @@
       }
       &__InnerText {
         margin-top: 16px;
-        line-height: 140%;
+        line-height: $str-line-height;
       }
       &__image {
         display: flex;
@@ -102,7 +103,7 @@
       }
       &__Image-innerText {
         font-size: 12px;
-        line-height: 1.4em;
+        line-height: $str-line-height;
         text-align: center;
         width: 100%;
       }
@@ -125,7 +126,7 @@
       &__Strcount {
         color: #888;
         font-size: 12px;
-        line-height: 1.4em;
+        line-height: $str-line-height;
         text-align: right;
         margin-top: 16px;
       }
@@ -133,7 +134,7 @@
         color: gray;
         font-size: 14px;
         font-weight: 600;
-        line-height: 140%;
+        line-height: $str-line-height;
         margin-bottom: 24px;
       }
       &__Sellprice {
@@ -160,7 +161,7 @@
         padding-bottom: 32px;
         p {
           font-size: 12px;
-          line-height: 1.4em;
+          line-height: $str-line-height;
         }
       }
       &__Btnbox {
