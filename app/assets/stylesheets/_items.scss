@@ -1,4 +1,5 @@
 .SellContainer {
+  $border-color: #efefef;
   $view-background-color: whitesmoke;
   background-repeat: no-repeat;
   margin: 0;
@@ -106,10 +107,10 @@
         width: 100%;
       }
       &__Separator {
-        border-top-color: #efefef;
-        border-left: 0 solid #efefef;
-        border-bottom: 0 solid #efefef;
-        border-right: 0 solid #efefef;
+        border-top-color: $border-color;
+        border-left: 0 solid $border-color;
+        border-bottom: 0 solid $border-color;
+        border-right: 0 solid $border-color;
         border-top-style: solid;
         border-top-width: 1px;
         margin: 0px;
