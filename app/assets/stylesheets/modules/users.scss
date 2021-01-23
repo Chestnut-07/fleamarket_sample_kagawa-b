@@ -1,5 +1,61 @@
-.TopMenu{}
-.UserShow{
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
+.TopMenu {
+  padding: 0 60px;
+  background-color: #fff;
+}
+.TopContainer {
+  max-width: 1040px;
+  width: 100%;
+  padding-top: 15px;
+  margin: 0 auto;
+  &__topBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    padding-bottom: 10px;
+    margin-right: 30px;
+    .TopLogo {
+      width: 140px;
+    }
+  }
+  .SearchForm {
+    margin-left: auto;
+    width: 100%;
+    &__form {
+      width: 100%;
+      display: flex;
+      margin-bottom: 5px;
+    }
+    &__area {
+      width: calc(100% - 26px);
+      height: 36px;
+      padding: 0 0 0 5px;
+    }
+    &__icon {
+      width: 36px;
+      height: 36px;
+      border: 0;
+      cursor: pointer;
+      background-color: #3CCACE;
+      padding: 8px;
+    }
+    &__image {
+      width: 100%;
+    }
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+.UserShow {
   background-color: #f5f5f5;
   box-sizing: border-box;
 }
@@ -20,7 +76,7 @@
     width: 700px;
   }
 }
-.LinkToDlsite{
+.LinkToDlsite {
 
 }
-.BottomMenu{}
+.BottomMenu {}
