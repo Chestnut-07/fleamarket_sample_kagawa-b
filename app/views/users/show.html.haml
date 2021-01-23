@@ -1,7 +1,10 @@
 %header.TopMenu
   .TopContainer
     .TopContainer__TopBar
-      %h1.TopLogo
+      %h1.TopContainer__Logo
+        = link_to root_path do
+          = image_tag 'material/logo/logo.png', class: 'TopLogo'
+        %span<>
       .SearchBox
         %form.SearchBar
     .TopContainer__ListBar
