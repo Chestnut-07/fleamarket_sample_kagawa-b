@@ -1,7 +1,7 @@
 .items{
   &__show{
     width: 600px;
-    height: 140vh;
+    height: 1100px;
     border: 1px solid gray;
     margin: 30px auto;
     &--name{
@@ -40,10 +40,10 @@
       margin: 10px auto;
       border-top: 1px solid  #c0c0c0;
 
-      &-name{
+      .b{
         display: flex;
         align-items: center;
-        &_type{
+        .a{
           height: 50px;
           width: 120px;
           border: 1px solid  #c0c0c0;
@@ -52,191 +52,13 @@
           align-items: center;
           background-color: #c0c0c0;
         }
-        &_real{
+        .c{
           height: 50px;
           width: 430px;
           border: 1px solid  #c0c0c0;
           display: flex;
           align-items: center;
           color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }
-        }
-      }
-      &-category{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }    
-        }
-
-      }
-      &-brand{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }
-        }
-      }
-      &-condition{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }
-        }
-      }
-      &-tax{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }
-        }
-      }
-      &-howto{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }
-        }
-      }
-      &-location{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-right: 2px solid #c0c0c0;
-          .text{
-            margin-left: 20px;
-          }
-        }
-      }
-      &-days{
-        display: flex;
-        align-items: center;
-        &_type{
-          height: 50px;
-          width: 120px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #c0c0c0;
-          border-bottom: 2px solid  #c0c0c0;
-        }
-        &_real{
-          height: 50px;
-          width: 430px;
-          border: 1px solid  #c0c0c0;
-          display: flex;
-          align-items: center;
-          color: #67c5ff;
-          border-bottom: 2px solid  #c0c0c0;
           border-right: 2px solid #c0c0c0;
           .text{
             margin-left: 20px;
@@ -293,7 +115,7 @@
         margin: 20px auto;
         display: block;
         border: none;
-        background-color: #33cc99
+        background-color: #33cc99;
       }
       .fukidasi{
         position: absolute;
@@ -309,9 +131,8 @@
     color: #33cc99;
     &_wrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr; /* 幅3等分 */
-      //grid-template-rows: 180px; /* 100pxの2行 */
-      grid-gap: 10px; /* 隙間10px */
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-gap: 10px; 
       margin-bottom: 20px;
     }
     &_wrapper > div {
@@ -355,9 +176,8 @@
     color: #33cc99;
     &_wrapper{
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr; /* 幅3等分 */
-      //grid-template-rows: 180px; /* 100pxの2行 */
-      grid-gap: 10px; /* 隙間10px */
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-gap: 10px; 
       margin-bottom: 20px;
     }
     &_wrapper > div {
