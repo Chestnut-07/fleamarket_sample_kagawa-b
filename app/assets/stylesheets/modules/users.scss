@@ -81,7 +81,29 @@ body {
         font-weight: 700;
       }
     }
-
+    .RightList {
+      margin-left: auto;
+      display: flex;
+      &__item {
+        position: relative;
+        cursor: pointer;
+      }
+      &__item a {
+        align-items: center;
+        color: #333;
+        text-decoration: none;
+        line-height: 32px;
+      }
+      &__item a i {
+        color: #cccccc;
+        font-size: 20px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+      &__item a img {
+        width: 28px;
+      }
+    }
   }
 }
 
