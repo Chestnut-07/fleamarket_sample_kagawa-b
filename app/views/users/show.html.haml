@@ -11,30 +11,30 @@
           = f.label :name, class: "SearchForm__icon" do
             = image_tag 'material/icon/icon-search 1.png', class: 'SearchForm__image'
             = f.submit class: "SearchForm__btn"
-    .TopContainer__ListBar
+    .TopContainer__listBar
       %ul.LeftList
-        %li.LeftList__Item
+        %li.LeftList__item
           = link_to "#" do
-            = icon('fas', 'list-ul', class: 'LeftList__icon')
+            = icon('fas', 'list-ul')
             %span カテゴリーから探す
-        %li.LeftList__Item
+        %li.LeftList__item
           = link_to "#" do
-            = icon('fas', 'tags', class: 'LeftList__icon')
+            = icon('fas', 'tags')
             %span ブランドから探す
       %ul.RightList
-        %li.RightList__Item
+        %li.RightList__item
           = link_to "#" do
-            = icon('fas', 'star', class: 'RightList__icon')
+            = icon('fas', 'star')
             %span お気に入り一覧
-        %li.RightList__Item
+        %li.RightList__item
           = link_to "#" do
-            = icon('fas', 'bell', class: 'RightList__icon')
+            = icon('fas', 'bell')
             %span お知らせ
-        %li.RightList__Item
+        %li.RightList__item
           = link_to "#" do
-            = icon('fas', 'check', class: 'RightList__icon')
+            = icon('fas', 'check')
             %span やること一覧
-        %li.RightList__Item
+        %li.RightList__item
           = link_to '/users/:id' do
             = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
             %span マイページ
