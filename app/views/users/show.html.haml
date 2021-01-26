@@ -26,14 +26,6 @@
           = link_to "#" do
             = icon('fas', 'star')
             お気に入り一覧
-        %li.RightList__item
-          = link_to "#" do
-            = icon('far', 'bell')
-            お知らせ
-        %li.RightList__item
-          = link_to "#" do
-            = icon('fas', 'check')
-            やること一覧
         %li.RightList__item.RightList__item--member
           = link_to '/users/:id' do
             = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
@@ -41,7 +33,54 @@
 %main.UserShow
   .BackBoard
     .SideBar
-      %nav.SideNavList
+      %nav.SideList
+        %ul.SideNavList
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              マイページ
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              出品する
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              出品した商品 - 出品中
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              出品した商品 - 取引中
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              出品した商品 - 売却済み
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              購入した商品
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              出品した商品 - 過去の取引
+              = icon('fas', 'chevron-right')
+        %h3.SideTitle 設定
+        %ul.SideNavList
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              プロフィール
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              発送元・お届け先住所変更
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow" do
+              支払い方法
+              = icon('fas', 'chevron-right')
+          %li
+            = link_to "#", class: "SideNavList__list", rel: "nofollow", method: "delete" do
+              ログアウト
+              = icon('fas', 'chevron-right')
     .MyPage
 .LinkToDlsite
 %footer.BottomMenu
