@@ -17,7 +17,23 @@
           = link_to "#" do
             = icon('fas', 'list-ul', class: 'LeftList__icon')
             %span カテゴリーから探す
+        %li.LeftList__Item
+          = link_to "#" do
+            = icon('fas', 'tags', class: 'LeftList__icon')
+            %span ブランドから探す
       %ul.RightList
+        %li.RightList__Item
+          = link_to "#" do
+            = icon('fas', 'star', class: 'RightList__icon')
+            %span お気に入り一覧
+        %li.RightList__Item
+          = link_to "#" do
+            = icon('fas', 'bell', class: 'RightList__icon')
+            %span お知らせ
+        %li.RightList__Item
+          = link_to "#" do
+            = icon('fas', 'check', class: 'RightList__icon')
+            %span やること一覧
         %li.RightList__Item
           = link_to '/users/:id' do
             = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
