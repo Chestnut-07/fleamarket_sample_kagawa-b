@@ -28,16 +28,16 @@
             お気に入り一覧
         %li.RightList__item
           = link_to "#" do
-            = icon('fas', 'bell')
+            = icon('far', 'bell')
             お知らせ
         %li.RightList__item
           = link_to "#" do
             = icon('fas', 'check')
             やること一覧
-        %li.RightList__item
+        %li.RightList__item.RightList__item--member
           = link_to '/users/:id' do
             = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
-            マイページ
+            %span マイページ
 %main.UserShow
   .BackBoard
     .SideBar
