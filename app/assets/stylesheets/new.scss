@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content {
+.content-sign-up {
+ 
   background: whitesmoke;
   font-size: 14px;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
@@ -14,12 +15,13 @@
 
 
 .main {
-  box-sizing: border-box;
+
   display: block;
 }
 
 .main-logo {
   padding: 30px;
+  margin-right: 20px; 
   text-align: center;
 }
 
@@ -30,18 +32,17 @@
 }
 
 .main-form {
+  margin: 0 auto;
   width: 600px;
 }
 
 .name {
   margin-top: 20px;
-  margin-left: 40px;
   text-align: center;
   display: block;
 }
 
 .name-second {
-  margin: 20px 0 0 40px;
   text-align: center;
 }
 
@@ -50,8 +51,8 @@
 }
 
 .user-name-second {
-  margin: 0 auto;
   display: block;
+  margin-top: 25px;
 }
 
 .name-content {
@@ -75,6 +76,7 @@
 }
 
 .name-form {
+  display: block;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border:  1px solid #ccc;
@@ -82,7 +84,8 @@
   line-height: 1.5;
   font-size: 16px;
   width: 27vw;
-  margin: 8px 0 0 40px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .name-form-second {
@@ -93,12 +96,12 @@
   line-height: 1.5;
   font-size: 16px;
   width: 50%;
-  margin: 8px 10px 10px 40px;
+  margin: 8px 10px 10px 0;
 }
 
 .news {
   color: gray;
-  margin-top: 15px;
+  margin-left: 20px;
 }
 
 .send {
@@ -106,7 +109,7 @@
   border: 1px solid teal;
   color: #fff;
   padding: 20px;
-  margin: 30px 0px 0px 60px;
+  margin-top: 50px;
   width: 500px;
   cursor: pointer;
 }
