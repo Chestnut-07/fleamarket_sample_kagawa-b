@@ -14,8 +14,14 @@
     .TopContainer__ListBar
       %ul.LeftList
         %li.LeftList__Item
-      %ul.RightItems
+          = link_to "#" do
+            = icon('fas', 'list-ul', class: 'LeftList__icon')
+            %span カテゴリーから探す
+      %ul.RightList
         %li.RightList__Item
+          = link_to '/users/:id' do
+            = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
+            %span マイページ
 %main.UserShow
   .BackBoard
     .SideBar
