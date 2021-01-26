@@ -53,6 +53,36 @@ body {
       display: none;
     }
   }
+  &__listBar {
+    font-size: 14px;
+    display: flex;
+    min-height: 42px;
+    .LeftList {
+      position: relative;
+      display: flex;
+      &__item {
+        line-height: 38px;
+        padding: 0 0 0 16px;
+        position: relative;
+      }
+      &__item a {
+        color: #333;
+        text-decoration: none;
+        line-height: 32px;
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        padding-right: 30px;
+      }
+      &__item a i {
+        color: #3CCACE;
+      }
+      &__item a span {
+        font-weight: 700;
+      }
+    }
+
+  }
 }
 
 .UserShow {
