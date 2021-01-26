@@ -7,7 +7,7 @@
         %span<>
       .SearchForm
         = form_with url:'#', class: "SearchForm__form", method: :get, local: true do |f|
-          = f.text_field :name, class: "SearchForm__area", placeholder: "キーワードから探す"
+          = f.search_field :name, class: "SearchForm__area", placeholder: "キーワードから探す"
           = f.label :name, class: "SearchForm__icon" do
             = image_tag 'material/icon/icon-search 1.png', class: 'SearchForm__image'
             = f.submit class: "SearchForm__btn"
