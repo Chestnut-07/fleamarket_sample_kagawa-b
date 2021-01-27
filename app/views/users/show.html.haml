@@ -82,5 +82,19 @@
               ログアウト
               = icon('fas', 'chevron-right')
     .MyPage
+      %section.MyPageUser
+        = link_to "#" do
+          %figure
+            = image_tag 'material/icon/member_photo_noimage_thumb.png', class: ''
+          %h2.Bold
+            山田太郎
+          .TradeStatus
+            .TradeStatus__segment
+              評価
+              %span.Bold 0
+            .TradeStatus__segment
+              出品数
+              %span.Bold 0
+      %section.MyPageContent
 .LinkToDlsite
 %footer.BottomMenu
