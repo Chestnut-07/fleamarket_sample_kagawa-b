@@ -231,6 +231,12 @@ body {
             line-height: 72px;
           }
         }
+        .Active {
+          background: #fff;
+          & h3 {
+            border-top: 2px solid #3ccace;
+          }
+        }
       }
     }
   }
