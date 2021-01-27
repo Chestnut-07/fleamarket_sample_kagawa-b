@@ -133,9 +133,17 @@ body {
   width: 280px;
   margin: 0 40px 0 0;
 
-  }
-    .SideList {
+    .SideTitle {
+      margin: 40px 0 0;
+      font-size: 16px;
+      font-weight: bold;
     }
+    .SideNavBox {
+      &__list {
+
+      }
+    }
+  }
   .MyPage {
     width: 700px;
   }
