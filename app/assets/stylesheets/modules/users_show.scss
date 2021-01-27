@@ -238,6 +238,14 @@ body {
           }
         }
       }
+      .ContentPanes {
+        .Show {
+          display: block;
+        }
+        & ul {
+          display: none;
+        }
+      }
     }
   }
 }
