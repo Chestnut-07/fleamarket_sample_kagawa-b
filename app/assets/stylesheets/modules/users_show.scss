@@ -4,8 +4,6 @@
 a {
   text-decoration: none;
 }
-.Bold {
-  font-weight: 600;
 body {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   background-color: #f8f8f8;
@@ -172,6 +170,8 @@ body {
       background-size: cover;
       text-align: center;
       position: relative;
+      .Bold {
+        font-weight: 600;
       }
       & a {
         display: block;
