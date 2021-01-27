@@ -6,7 +6,7 @@ a {
 }
 body {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f5f5f5;
 }
 .TopMenu {
   padding: 0 60px;
@@ -205,6 +205,15 @@ body {
         & div+div {
           margin-left: 16px;
         }
+      }
+    }
+    .MyPageContent {
+      margin: 40px 0 0 0;
+      &__title {
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+        padding: 0 16px;
       }
     }
   }
