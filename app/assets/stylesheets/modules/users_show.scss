@@ -193,9 +193,18 @@ body {
         width: 60px;
         height: 60px;
       }
-      .TradeStatus {
+      .TradeCount {
+        margin: 8px 0 0;
         &__segment {
           display: inline-block;
+          font-size: 14px;
+        }
+        & span {
+          font-size: 16px;
+          margin-left: 8px;
+        }
+        & div+div {
+          margin-left: 16px;
         }
       }
     }
