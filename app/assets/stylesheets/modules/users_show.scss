@@ -168,12 +168,18 @@ body {
       background-image: url("material/pict/bg-user_banner.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      text-align: center;
+      // position: relative;
       .Bold {
         font-weight: 600;
       }
       & a {
+        display: block;
+        color: #333;
+        // position: absolute;
       }
       & figure {
+        margin: 0 auto;
       }
       & img {
         width: 60px;
