@@ -215,6 +215,19 @@ body {
         line-height: 72px;
         padding: 0 16px;
       }
+      .ContentTabs {
+        background: #eee;
+        white-space: nowrap;
+        & li {
+          display: inline-block;
+          text-align: center;
+          width: 50%;
+          cursor: pointer;
+          vertical-align: top;
+          & h3 {
+          }
+        }
+      }
     }
   }
 }
