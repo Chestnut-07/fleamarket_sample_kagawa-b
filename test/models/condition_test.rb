@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ItemConditionTest < ActiveSupport::TestCase
+class ConditionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
