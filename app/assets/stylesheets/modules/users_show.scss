@@ -168,6 +168,22 @@ body {
       background-image: url("material/pict/bg-user_banner.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      .Bold {
+        font-weight: 600;
+      }
+      & a {
+      }
+      & figure {
+      }
+      & img {
+        width: 60px;
+        height: 60px;
+      }
+      .TradeStatus {
+        &__segment {
+          display: inline-block;
+        }
+      }
     }
   }
 }
