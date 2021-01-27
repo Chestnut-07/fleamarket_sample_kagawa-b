@@ -128,7 +128,6 @@ body {
   padding: 40px 0;
   width: 1020px;
   display: flex;
-  box-sizing: border-box;
   .SideBar {
   width: 280px;
   margin: 0 40px 0 0;
@@ -162,6 +161,14 @@ body {
   }
   .MyPage {
     width: 700px;
+    // flex: 110%;
+    .MyPageUser {
+      height: 200px;
+      padding: 20px;
+      background-image: url("material/pict/bg-user_banner.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 }
 .LinkToDlsite {
