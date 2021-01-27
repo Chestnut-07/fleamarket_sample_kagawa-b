@@ -71,3 +71,5 @@ gem 'font-awesome-sass', '~> 5.15.1'
 gem 'devise'
 
 gem 'ancestry'
+
+gem 'active_hash'
