@@ -395,3 +395,11 @@ body {
     }
   }
 }
+.ListingBtn {
+  width: 120px;
+  background-color: #3ccace;
+  &__title {}
+  &__img {
+    width: 60%;
+  }
+}
