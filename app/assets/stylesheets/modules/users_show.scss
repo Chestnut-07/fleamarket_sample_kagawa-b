@@ -122,200 +122,200 @@ body {
 }
 
 .UserShow {
-}
-.BackBoard {
-  margin: 0 auto;
-  padding: 40px 0;
-  width: 1020px;
-  display: flex;
-  .SideBar {
-  width: 280px;
-  margin: 0 40px 0 0;
-
-    .SideTitle {
-      margin: 40px 0 0;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .SideNavBox {
-      & li {
-        border-top: 1px solid #eee;
+  .BackBoard {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 1020px;
+    display: flex;
+    .SideBar {
+    width: 280px;
+    margin: 0 40px 0 0;
+  
+      .SideTitle {
+        margin: 40px 0 0;
+        font-size: 16px;
+        font-weight: bold;
       }
-      &__list {
-        min-height: 48px;
-        padding: 16px;
-        font-size: 14px;
-        background: #fff;
-        color: #333;
+      .SideNavBox {
+        & li {
+          border-top: 1px solid #eee;
+        }
+        &__list {
+          min-height: 48px;
+          padding: 16px;
+          font-size: 14px;
+          background: #fff;
+          color: #333;
+          position: relative;
+          display: block;
+          & i {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            color: #ccc;
+            transform: translate(0, -50%);
+          }
+        }
+      }
+    }
+    .MyPage {
+      width: 700px;
+      .MyPageUser {
+        height: 200px;
+        padding: 20px;
+        background-image: url("material/pict/bg-user_banner.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
         position: relative;
-        display: block;
-        & i {
+        .Bold {
+          font-weight: 600;
+        }
+        & a {
+          display: block;
+          color: #333;
           position: absolute;
           top: 50%;
-          right: 16px;
-          color: #ccc;
+          left: 0;
+          right: 0;
           transform: translate(0, -50%);
         }
-      }
-    }
-  }
-  .MyPage {
-    width: 700px;
-    .MyPageUser {
-      height: 200px;
-      padding: 20px;
-      background-image: url("material/pict/bg-user_banner.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      text-align: center;
-      position: relative;
-      .Bold {
-        font-weight: 600;
-      }
-      & a {
-        display: block;
-        color: #333;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translate(0, -50%);
-      }
-      & figure {
-        margin: 0 auto;
-        overflow: hidden;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-      }
-      & img {
-        width: 60px;
-        height: 60px;
-      }
-      .TradeCount {
-        margin: 8px 0 0;
-        &__segment {
-          display: inline-block;
-          font-size: 14px;
+        & figure {
+          margin: 0 auto;
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
         }
-        & span {
+        & img {
+          width: 60px;
+          height: 60px;
+        }
+        .TradeCount {
+          margin: 8px 0 0;
+          &__segment {
+            display: inline-block;
+            font-size: 14px;
+          }
+          & span {
+            font-size: 16px;
+            margin-left: 8px;
+          }
+          & div+div {
+            margin-left: 16px;
+          }
+        }
+      }
+      .MyPageContent {
+        margin: 40px 0 0 0;
+        background: #fff;
+        &__title {
+          background: #fafafa;
           font-size: 16px;
-          margin-left: 8px;
+          line-height: 72px;
+          padding: 0 16px;
         }
-        & div+div {
-          margin-left: 16px;
-        }
-      }
-    }
-    .MyPageContent {
-      margin: 40px 0 0 0;
-      background: #fff;
-      &__title {
-        background: #fafafa;
-        font-size: 16px;
-        line-height: 72px;
-        padding: 0 16px;
-      }
-      .ContentTabs {
-        background: #eee;
-        white-space: nowrap;
-        & li {
-          display: inline-block;
-          text-align: center;
-          width: 50%;
-          cursor: pointer;
-          vertical-align: top;
-          & h3 {
-            font-weight: bold;
-            color: #333;
-            font-size: 16px;
-            line-height: 72px;
-          }
-        }
-        .Active {
-          background: #fff;
-          & h3 {
-            border-top: 2px solid #3ccace;
-          }
-        }
-      }
-      .ContentPanes {
-        .Show {
-          display: block;
-        }
-        & ul {
-          display: none;
-          font-size: 14px;
+        .ContentTabs {
+          background: #eee;
+          white-space: nowrap;
           & li {
-            border-bottom: 1px solid #eee;
-          }
-          .PaneList {
-            min-height: 80px;
-            display: flex;
-            padding: 0 16px;
-            align-items: center;
-            color: #333;
-            & figure {
-              width: 48px;
-              height: 48px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-            }
-            & img {
-              width: 100%;
-              position: absolute;
-              background: #eee;
-              top: 0;
-              bottom: 0;
-              right: 0;
-              left: 0;
-            }
-            .ItemInfo {
-              margin: 0 40px 0 20px;
-              -webkit-box-flex: 1;
-              flex: 1;
-              overflow: hidden;
-              .ItemIntro {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                line-height: 1.5;
-                white-space: nowrap;
-                word-break: break-all;
-              }
-              .ItemState {
-                display: inline-flex;
-                margin: 4px 0 0 0;
-                padding: 0 4px;
-                height: 17px;
-                font-size: 12px;
-                font-weight: bold;
-                color: #fff;
-                align-items: center;
-                justify-items: center;
-              }
-              .Done {
-                background: #888;
-              }
-            }
-          }
-          .NotFound {
-            background-color: #fff;
-            padding: 60px 0 60px;
+            display: inline-block;
             text-align: center;
-            font-size: 16px;
-            color: #ccc;
-          }
-          .PaneBottom {
-            padding: 16px;
-            & a {
-              height: 56px;
-              line-height: 56px;
-              background: #eee;
-              display: block;
-              margin: 0 auto;
+            width: 50%;
+            cursor: pointer;
+            vertical-align: top;
+            & h3 {
+              font-weight: bold;
               color: #333;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+          .Active {
+            background: #fff;
+            & h3 {
+              border-top: 2px solid #3ccace;
+            }
+          }
+        }
+        .ContentPanes {
+          .Show {
+            display: block;
+          }
+          & ul {
+            display: none;
+            font-size: 14px;
+            & li {
+              border-bottom: 1px solid #eee;
+            }
+            .PaneList {
+              min-height: 80px;
+              display: flex;
+              padding: 0 16px;
+              align-items: center;
+              color: #333;
+              & figure {
+                width: 48px;
+                height: 48px;
+                position: relative;
+                overflow: hidden;
+                margin: 0;
+              }
+              & img {
+                width: 100%;
+                position: absolute;
+                background: #eee;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+              }
+              .ItemInfo {
+                margin: 0 40px 0 20px;
+                -webkit-box-flex: 1;
+                flex: 1;
+                overflow: hidden;
+                .ItemIntro {
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  line-height: 1.5;
+                  white-space: nowrap;
+                  word-break: break-all;
+                }
+                .ItemState {
+                  display: inline-flex;
+                  margin: 4px 0 0 0;
+                  padding: 0 4px;
+                  height: 17px;
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #fff;
+                  align-items: center;
+                  justify-items: center;
+                }
+                .Done {
+                  background: #888;
+                }
+              }
+            }
+            .NotFound {
+              background-color: #fff;
+              padding: 60px 0 60px;
               text-align: center;
+              font-size: 16px;
+              color: #ccc;
+            }
+            .PaneBottom {
+              padding: 16px;
+              & a {
+                height: 56px;
+                line-height: 56px;
+                background: #eee;
+                display: block;
+                margin: 0 auto;
+                color: #333;
+                text-align: center;
+              }
             }
           }
         }
@@ -323,7 +323,8 @@ body {
     }
   }
 }
-.LinkToDlsite {
+
+.AppAdvertising {
 
 }
 .BottomMenu {}
