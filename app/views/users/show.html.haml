@@ -116,12 +116,12 @@
               = link_to "#" do
                 一覧を見る
       %section.MyPageContent
-        %h2.MyPageContent__title 出品した商品
+        %h2.MyPageContent__title 購入した商品
         %ul.ContentTabs
           %li.Tab1
-            %h3 出品中
+            %h3 お気にいり
           %li.Tab2.Active
-            %h3 売却済み
+            %h3 購入済み
         .ContentPanes
           %ul.Pane1
             %li
@@ -138,19 +138,8 @@
               = link_to "#" do
                 一覧を見る
           %ul.Pane2.Show
-            %li
-              = link_to "#", class: "PaneList" do
-                %figure
-                  = image_tag 'material/icon/icon_category.png'
-                .ItemInfo
-                  .ItemIntro
-                    商品説明：あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよ
-                  .ItemState.Done
-                    取引完了
-                = icon('fas', 'chevron-right')
-            %li.PaneBottom
-              = link_to "#" do
-                一覧を見る
+            %li.NotFound
+              購入した商品がありません
 
 .LinkToDlsite
 %footer.BottomMenu
