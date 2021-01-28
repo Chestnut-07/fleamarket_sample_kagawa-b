@@ -2,7 +2,7 @@
   .TopContainer
     .TopContainer__topBar
       %h1.TopContainer__logo
-        = link_to root_path do
+        = link_to "/" do
           = image_tag 'material/logo/logo.png', class: 'TopLogo'
         %span<>
       .SearchForm
@@ -151,3 +151,8 @@
       = link_to "#", class: "googlebtn" do
         = image_tag 'material/pict/googlebtn.svg'
 %footer.BottomMenu
+  %ul.BttomList
+  .BottomMenu__logo
+    = link_to "/" do
+      = image_tag 'material/logo/logo-white.png'
+  %p © FURIMA
