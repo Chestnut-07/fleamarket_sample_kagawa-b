@@ -2,7 +2,7 @@
   .TopContainer
     .TopContainer__topBar
       %h1.TopContainer__logo
-        = link_to "/" do
+        = link_to root_path do
           = image_tag 'material/logo/logo.png', class: 'TopLogo'
         %span<>
       .SearchForm
@@ -27,7 +27,7 @@
             = icon('fas', 'star')
             お気に入り一覧(工事中)
         %li.RightList__item.RightList__item--member
-          = link_to '/users/:id' do
+          = link_to user_path do
             = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
             %span マイページ
 %main.UserShow
@@ -36,11 +36,11 @@
       %nav.SideNav
         %ul.SideNavBox
           %li
-            = link_to "/users/:id", class: "SideNavBox__list", rel: "nofollow" do
+            = link_to user_path, class: "SideNavBox__list", rel: "nofollow" do
               マイページ
               = icon('fas', 'chevron-right')
           %li
-            = link_to "/items/new", class: "SideNavBox__list", rel: "nofollow" do
+            = link_to "#", class: "SideNavBox__list", rel: "nofollow" do
               出品する
               = icon('fas', 'chevron-right')
           %li
@@ -157,42 +157,42 @@
         FURIMAについて
       %ul
         %li
-          = link_to "/" do
+          = link_to root_path do
             会社概要(運営会社)
         %li
-          = link_to "/" do
+          = link_to root_path do
             プライバシーポリシー
         %li
-          = link_to "/" do
+          = link_to root_path do
             FURIMA利用規約
         %li
-          = link_to "/" do
+          = link_to root_path do
             ポイントに関する特約
     %li.BottomList
       %h2.BottomList__title
         FURIMAを見る
       %ul
         %li
-          = link_to "/" do
+          = link_to root_path do
             カテゴリー一覧
         %li
-          = link_to "/" do
+          = link_to root_path do
             ブランド一覧
     %li.BottomList
       %h2.BottomList__title
         ヘルプ＆ガイド
       %ul
         %li
-          = link_to "/" do
+          = link_to root_path do
             FURIMAガイド
         %li
-          = link_to "/" do
+          = link_to root_path do
             FURIMAロゴ利用ガイドライン
         %li
-          = link_to "/" do
+          = link_to root_path do
             お知らせ
   .BottomMenu__logo
-    = link_to "/" do
+    = link_to root_path do
       = image_tag 'material/logo/logo-white.png'
   %p © FURIMA
 = link_to "#" do
