@@ -325,6 +325,16 @@ body {
 }
 
 .AppAdvertising {
-
+  background-image: url(material/pict/bg-appBanner-pict.jpg);
+  background-size: cover;
+  background-position: center;
+  .MyPageAd {
+    &__copy {}
+    &__promo {}
+    &__btn {
+      .appbtn {}
+      .googlebtn {}
+    }
+  }
 }
 .BottomMenu {}
