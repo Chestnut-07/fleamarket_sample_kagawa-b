@@ -359,4 +359,18 @@ body {
     }
   }
 }
-.BottomMenu {}
+.BottomMenu {
+  padding: 60px 0;
+  background-color: #272727;
+  color: #fff;
+  text-align: center;
+  &__logo {
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+}
