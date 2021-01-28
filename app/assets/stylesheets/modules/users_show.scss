@@ -328,11 +328,19 @@ body {
   background-image: url(material/pict/bg-appBanner-pict.jpg);
   background-size: cover;
   background-position: center;
+  padding: 100px 40px;
   .MyPageAd {
     color: #fff;
     text-align: center;
-    &__copy {}
-    &__promo {}
+    &__copy {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
+    }
+    &__promo {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
+    }
     &__btn {
       display: flex;
       a {
