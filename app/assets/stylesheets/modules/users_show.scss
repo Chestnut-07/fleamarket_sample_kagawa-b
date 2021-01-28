@@ -245,19 +245,48 @@ body {
         }
         & ul {
           display: none;
+          font-size: 14px;
           & li {
             border-bottom: 1px solid #eee;
           }
           .PaneList {
             min-height: 80px;
-            
-          }
-          & figure {
-            width: 48px;
-            height: 48px;
-          }
-          & img {
-            width: 100%;
+            display: flex;
+            padding: 0 16px;
+            align-items: center;
+            color: #333;
+            & figure {
+              width: 48px;
+              height: 48px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+            }
+            & img {
+              width: 100%;
+              position: absolute;
+              background: #eee;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: 0;
+            }
+            .ItemInfo {
+              margin: 0 40px 0 20px;
+              -webkit-box-flex: 1;
+              flex: 1;
+              overflow: hidden;
+              .ItemIntro {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.5;
+                white-space: nowrap;
+                word-break: break-all;
+              }
+              .ItemState {
+
+              }
+            }
           }
           .PaneBottom {
             padding: 16px;
