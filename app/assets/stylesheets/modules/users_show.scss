@@ -329,11 +329,23 @@ body {
   background-size: cover;
   background-position: center;
   .MyPageAd {
+    color: #fff;
+    text-align: center;
     &__copy {}
     &__promo {}
     &__btn {
-      .appbtn {}
-      .googlebtn {}
+      display: flex;
+      a {
+        img {
+          width: 100%;
+        }
+      }
+      .appbtn {
+        width: 180px;
+      }
+      .googlebtn {
+        width: 180px;
+      }
     }
   }
 }
