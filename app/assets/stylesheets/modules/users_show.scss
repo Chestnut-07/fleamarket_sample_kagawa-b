@@ -398,7 +398,15 @@ body {
 .ListingBtn {
   width: 120px;
   background-color: #3ccace;
-  &__title {}
+  text-align: center;
+  padding: 15px;
+  border-radius: 4%;
+  &__title {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
   &__img {
     width: 60%;
   }
