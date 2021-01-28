@@ -401,6 +401,9 @@ body {
   text-align: center;
   padding: 15px;
   border-radius: 4%;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
   &__title {
     color: #fff;
     display: block;
