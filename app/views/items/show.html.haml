@@ -78,7 +78,7 @@
   
   .items__comment
     = form_with local: true do |f| 
-      = f.text_field :text, class: 'comment', placeholder: 'type a message'
+      = f.text_area :text, class: 'comment', placeholder: 'type a message',rows: "7"
       .items__comment--alart
         %p
           相手のことを考え丁寧なコメントを心がけましょう。 
