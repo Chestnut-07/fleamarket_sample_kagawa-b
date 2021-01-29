@@ -10,4 +10,6 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def create
+  end
 end
