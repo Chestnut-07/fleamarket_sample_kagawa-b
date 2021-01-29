@@ -1,3 +1,6 @@
+@import "top_header";
+@import "side_bar";
+@import "advertising_&_footer";
 * {
   box-sizing: border-box;
 }
@@ -8,14 +11,12 @@ body {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   background-color: #f5f5f5;
 }
-@import "top_header";
 .UserShow {
   .BackBoard {
     margin: 0 auto;
     padding: 40px 0;
     width: 1020px;
     display: flex;
-    @import "side_bar";
     .MyPage {
       width: 700px;
       .MyPageUser {
@@ -181,4 +182,3 @@ body {
     }
   }
 }
-@import "advertising_&_footer"
