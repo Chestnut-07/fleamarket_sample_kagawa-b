@@ -1,0 +1,57 @@
+.SellContainer {
+  $border-color: #efefef;
+  $view-background-color: whitesmoke;
+  $str-line-height: 140%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  background-color: $view-background-color;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  img {
+    width: 185px;
+    height: 49px;
+  }
+  a {
+    color: blue;
+  }
+  .SellHeader {
+    height: 128px;
+    text-align: center;
+    h1 {
+      margin: 40px 0 0;
+      display: inline-block;
+    }
+    a {
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+    }
+  }
+  .SellFooter {
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+    height: 220px;
+    width: 456px;
+    nav {
+      display: block;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        display: inline-block;
+        margin-left: 16px;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        font-size: 12px;
+      }
+    }
+    img {
+      margin: 40px auto 0;
+    }
+  }
+}
