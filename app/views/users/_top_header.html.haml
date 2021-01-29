@@ -1,0 +1,32 @@
+%header.TopMenu
+  .TopContainer
+    .TopContainer__topBar
+      %h1.TopContainer__logo
+        = link_to root_path do
+          = image_tag 'material/logo/logo.png', class: 'TopLogo'
+        %span<>
+      .SearchForm
+        = form_with url:'#', class: "SearchForm__form", method: :get, local: true do |f|
+          = f.search_field :name, class: "SearchForm__area", placeholder: "キーワードから探す"
+          = f.label :name, class: "SearchForm__icon" do
+            = image_tag 'material/icon/icon-search 1.png', class: 'SearchForm__image'
+            = f.submit class: "SearchForm__btn"
+    .TopContainer__listBar
+      %ul.LeftList
+        %li.LeftList__item
+          = link_to "#" do
+            = icon('fas', 'list-ul')
+            %span カテゴリーから探す
+        %li.LeftList__item
+          = link_to "#" do
+            = icon('fas', 'tags')
+            %span ブランドから探す
+      %ul.RightList
+        %li.RightList__item
+          = link_to "#" do
+            = icon('fas', 'star')
+            お気に入り一覧(工事中)
+        %li.RightList__item.RightList__item--member
+          = link_to user_path do
+            = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
+            %span マイページ
