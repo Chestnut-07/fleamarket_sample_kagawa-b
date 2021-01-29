@@ -7,11 +7,12 @@
       ¥3000
     .items__show--tax
       (税込) 送料込み
-    -# - if user_signed_in? && current_user.id == item.user_id
     .items__show--btn
-      = link_to "商品を編集する", "#", class: "edit_btn"
-      = link_to "商品を削除する", "#", class: "delete_btn"
-
+      -# - if user_signed_in? && current_user.id == item.seller_id
+      -#   = link_to "商品を編集する", "#", class: "edit_btn btn"
+      -#   = link_to "商品を削除する", "#", class: "delete_btn btn"
+      -# - else current_user.id != item.seller_id
+      -#   = link_to "購入画面に進む", "#", class: "purchase_btn btn"
     .items__show--size
       Mサイズ
     .items__show--sentence
