@@ -74,7 +74,7 @@
             配送料の負担
           %span.FormItemPanel__Require
             必須
-          = f.collection_select(:shipping_fee_payer_id, ShippingFeePayer.all, :id, :name, { include_blank: "--選択してください--" }, { id: "shipping", required: true})
+          = f.collection_select :shipping_fee_payer_id, ShippingFeePayer.all, :id, :name, { include_blank: "--選択してください--" }, { id: "shipping", required: true}
           -# = f.select :shipping_fee_payer, [['送料込み(出品者負担)', "seller"] ,['着払い(購入者負担)', "buyer"]], { include_blank: '--選択してください--'}, { id: "shipping", class: "FormItemPanel__Shipping", required: true}
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           %label{for: "prefecture"}
