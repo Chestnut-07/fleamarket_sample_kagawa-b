@@ -128,7 +128,10 @@
     }
   }
   .BackBtn {
-    
+    display: block;
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
   }
 }
 .Require {
