@@ -126,6 +126,12 @@
       color: #0095ee;
       cursor: pointer;
     }
+    .CardLogo {
+      max-width: 44px;
+      max-height: 20px;
+      margin: 5px;
+      vertical-align: middle;
+    }
   }
   input[type="submit"] {
     margin-top: 32px;
