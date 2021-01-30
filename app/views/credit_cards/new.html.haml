@@ -13,20 +13,19 @@
             %span.Require 必須
           .CardInputField__form
             = f.text_field :card_number, id: "card_number_form", placeholder: "1234 5678 1234 5678", required: true
-          
         .CardInputField
           .CardInputField__heading
             %label{for: "card_exp_month"} 有効期限
             %span.Require 必須
           .CardInputField__form
-            = f.text_field :card_number, id: "card_number_form", placeholder: "1234 5678 1234 5678", required: true
+            = f.select :exp_month, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"]], { include_blank: "---" }, { id: "exp_month_form", class: "ExpDate", required: true }
+            = f.select :exp_year, [["21", "21"], ["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"], ["26", "26"], ["27", "27"], ["28", "28"], ["29", "29"], ["30", "30"], ["31", "31"]], { include_blank: "---" }, { id: "exp_year_form", class: "ExpDate", required: true }
         .CardInputField
           .CardInputField__heading
             %label{for: "card_security"} セキュリティーコード
             %span.Require 必須
           .CardInputField__form
-            = f.text_field :card_number, id: "card_number_form", placeholder: "1234 5678 1234 5678", required: true
-
+            = f.text_field :card_security, id: "cvc_form", placeholder: "カード背面4桁もしくは3桁の番号", required: true
   %footer.SellFooter
     %nav
       %ul
