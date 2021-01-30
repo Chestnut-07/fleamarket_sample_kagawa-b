@@ -14,6 +14,12 @@
           .CardInputField__form
             = f.text_field :card_number, id: "card_number_form", placeholder: "1234 5678 1234 5678", required: true
           = image_tag 'material/pict/visa_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/master_card_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/saison_card_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/jcb_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/american_express_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/diners_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/discover_card_logo.svg', class: 'CardLogo'
         .CardInputField
           .CardInputField__heading
             %label{for: "card_exp_month"} 有効期限
