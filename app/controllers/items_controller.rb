@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
   end
   
@@ -8,6 +9,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @category = Category.roots
   end
 
   def create
