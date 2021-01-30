@@ -120,6 +120,12 @@
         text-align: right;
       }
     }
+    &__annotation {
+      margin-top: 8px;
+      text-align: right;
+      color: #0095ee;
+      cursor: pointer;
+    }
   }
 }
 .Require {
