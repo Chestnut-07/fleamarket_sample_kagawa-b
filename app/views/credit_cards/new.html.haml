@@ -5,6 +5,13 @@
   %main.SellNewContainer
     %section.ResistCard
       %h2 支払い方法
+    = form_with model: nil, local: true do |f|
+      .CardFormPanel
+        .CardInputField
+          .CardInputField__heading
+            %label カード番号
+            %span.Require 必須
+          .CardInputField__form
   %footer.SellFooter
     %nav
       %ul
