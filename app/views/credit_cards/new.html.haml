@@ -31,6 +31,9 @@
           .CardInputField__annotation
             = icon('fas', 'question-circle')
             カード裏面の番号とは？
+        = f.submit "登録する", class: "DafaultBtn BlueBtn"
+        = link_to credit_cards_path, class: "BackBtn" do
+          もどる
   %footer.SellFooter
     %nav
       %ul
