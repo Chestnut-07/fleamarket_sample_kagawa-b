@@ -127,11 +127,16 @@
       cursor: pointer;
     }
   }
+  input[type="submit"] {
+    margin-top: 32px;
+  }
+
   .BackBtn {
     display: block;
     width: 100%;
     text-align: center;
     word-break: keep-all;
+    margin-top: 32px;
   }
 }
 .Require {
