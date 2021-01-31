@@ -1,5 +1,4 @@
 /*
-
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
 */
@@ -13,7 +12,6 @@ html{
 /*
   TODO test putting a class on HEAD.
       - Fails on FF.
-
 */
 body,
 div,
@@ -40,7 +38,6 @@ p,
 blockquote,
 th,
 td {
-
   margin:0;
   padding:0;
 }
@@ -54,7 +51,6 @@ img {
 }
 /*
   TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
-
 */
 address,
 caption,
@@ -65,23 +61,18 @@ em,
 strong,
 th,
 var {
-
   font-style:normal;
   font-weight:normal;
-
+}
 
 ol,
 ul {
-
   list-style:none;
-
 }
 
 caption,
 th {
-
   text-align:left;
-
 }
 h1,
 h2,
@@ -89,7 +80,6 @@ h3,
 h4,
 h5,
 h6 {
-
   font-size:100%;
   font-weight:normal;
 }
