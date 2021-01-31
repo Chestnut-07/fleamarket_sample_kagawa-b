@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :credit_cards, only: [:index, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resource :items, only: [:index, :new, :show]
 end
