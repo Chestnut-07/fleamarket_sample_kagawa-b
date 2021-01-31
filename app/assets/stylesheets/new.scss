@@ -4,10 +4,12 @@
 
 $white-color: #fff;
 $gray-color: #ccc;
+$red-color: #EA352D;
+$teal-color: teal;
 
 .content-sign-up {
  
-  background: whitesmoke;
+  background-color: whitesmoke;
   font-size: 14px;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
@@ -49,7 +51,7 @@ $gray-color: #ccc;
     color: $white-color;
     font-size: 12px;
     vertical-align: top;
-    background-color: #EA352D;
+    background-color: $red-color;
   }
   .name-form {
     display: block;
@@ -79,7 +81,7 @@ $gray-color: #ccc;
     color: $white-color;
     font-size: 12px;
     vertical-align: top;
-    background-color: #EA352D;
+    background-color: $red-color;
   }
   .name-form-second {
     padding: 10px 16px 8px;
@@ -103,8 +105,8 @@ $gray-color: #ccc;
 }
 
 .send {
-  background: teal;
-  border: 1px solid teal;
+  background:$teal-color;
+  border: 1px solid $teal-color;
   color: $white-color;
   padding: 20px;
   margin-top: 50px;
