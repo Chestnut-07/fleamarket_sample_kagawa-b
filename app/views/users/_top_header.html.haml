@@ -4,7 +4,6 @@
       %h1.TopContainer__logo
         = link_to root_path do
           = image_tag 'material/logo/logo.png', class: 'TopLogo'
-        %span<>
       .SearchForm
         = form_with url:'#', class: "SearchForm__form", method: :get, local: true do |f|
           = f.search_field :name, class: "SearchForm__area", placeholder: "キーワードから探す"
