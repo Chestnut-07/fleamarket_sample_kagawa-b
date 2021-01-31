@@ -38,7 +38,7 @@
       height: 36px;
       border: 0;
       cursor: pointer;
-      background-color: #3CCACE;
+      background-color: $symbol-color;
       padding: 8px;
     }
     &__image {
@@ -70,7 +70,7 @@
         padding-right: 30px;
       }
       &__item a i {
-        color: #3CCACE;
+        color: $symbol-color;
       }
       &__item span {
         font-weight: 700;
