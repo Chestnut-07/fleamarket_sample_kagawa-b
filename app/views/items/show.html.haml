@@ -8,13 +8,13 @@
     .items__show--tax
       = @item.shipping_fee_payer[:name]
     .items__show--btn
-      -# - if user_signed_in? && current_user.id == item.seller_id
-      -#   = link_to "商品を編集する", "#", class: "edit_btn btn"
-      -#   = link_to "商品を削除する", "#", class: "delete_btn btn"
       -# - else current_user.id != item.seller_id
       -#   = link_to "購入画面に進む", "#", class: "purchase_btn btn"
     .items__show--size
       Mサイズ
+      - if user_signed_in? && current_user == @item.seller
+        = link_to "商品を編集する", "#", class: "edit_btn btn"
+        = link_to "商品を削除する", "#", class: "delete_btn btn"
     .items__show--sentence
       = @item.introduction
       -# %p 
