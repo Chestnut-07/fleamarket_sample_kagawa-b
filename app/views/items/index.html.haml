@@ -1,6 +1,19 @@
 = render "users/top_header"
 .ItemIndexBoard
   %section.TopAdvertise
+    .TopAdPanel
+      %h2.TopAdPanel__heading
+        %br
+        人生を変えるフリマアプリ
+      %p.TopAdPanel__text
+        FURIMAはだれでもかんたんに出品・購入ができる
+        %br
+        フリマアプリです
+      .TopAdPanel__btn
+        = link_to "#", class: "appbtn" do
+          = image_tag 'material/pict/appbtn.svg'
+        = link_to "#", class: "googlebtn" do
+          = image_tag 'material/pict/googlebtn.svg'
   %section.FurimaReasons
   %section.FurimaAdvertise
   %section.FurimaFeatures
