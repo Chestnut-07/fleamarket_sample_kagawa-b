@@ -71,7 +71,7 @@
           .text
             = @item.preparation_day[:name]
     .items__show--menu
-      .items__show--menu-like
+      = link_to "#", class: "items__show--menu-like" do
         = icon('fas', 'star', class: "star")
         お気に入り
       .items__show--menu-report
