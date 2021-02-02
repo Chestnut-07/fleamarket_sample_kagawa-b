@@ -1,0 +1,102 @@
+.CardNewContainer {
+  margin: 0px auto;
+  max-width: 700px;
+  background-color: white;
+}
+.ResistCard {
+  padding: 32px 16px;
+  border-bottom: 1px solid whitesmoke;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 34px;
+  }
+}
+.CardFormPanel {
+  margin: 0 auto;
+  padding: 32px 16px;
+  max-width: 375px;
+  .CardInputField {
+    margin-top: 28px;
+    &__heading {
+      label {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+    }
+    &__form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+        margin-top: 16px;
+      input {
+        width: inherit;
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 16px;
+        font-size: 16px;
+        outline: none;
+      }
+      .ExpDate {
+        width: 100%;
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 56px 0 16px;
+        font-size: 16px;
+        color: #222;
+        margin-right: 5px;
+        outline: none;
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+      .ApartMonth {
+        width: 46px;
+        text-align: center;
+      }
+      .ApartYear {
+        width: 30px;
+        text-align: right;
+      }
+    }
+    &__annotation {
+      margin-top: 8px;
+      text-align: right;
+      color: #0095ee;
+      cursor: pointer;
+    }
+    .CardLogo {
+      max-width: 44px;
+      max-height: 20px;
+      margin: 5px;
+      vertical-align: middle;
+    }
+  }
+  input[type="submit"] {
+    margin-top: 32px;
+  }
+  .BackBtn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+    margin-top: 32px;
+  }
+}
+.Require {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 2px;
+  font-style: normal;
+  display: inline-block;
+  font-weight: 600;
+  line-height: $str-line-height;
+  margin-left: 8px;
+}

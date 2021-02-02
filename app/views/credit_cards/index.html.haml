@@ -1,0 +1,19 @@
+= render "users/top_header"
+%main.CardShow
+  .BackBoard
+    = render "users/side_bar"
+    .MainBody
+      .PayMethod
+        %section.Payment
+          %h2.Payment__heading
+            支払い方法
+        .Method
+          %section.Method__section
+            = link_to new_credit_card_path, class: "DefaultBtn BlueBtn" do
+              = icon('far', 'credit-card')
+              クレジットカードを追加する
+          %section.Method__section.RJustify
+            = link_to "#" do
+              %span 支払い方法について
+              = icon('fas', 'angle-right')
+= render "users/advertising_&_footer"
