@@ -105,6 +105,10 @@
   }
 }
 .FurimaAdvertise {
+  background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
+  height: 400px;
+  background-size: cover;
+  background-position: bottom right;
   .FurimaAdCopy {
     &__btn {
       @include apple_google_btn;
