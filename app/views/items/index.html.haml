@@ -82,6 +82,26 @@
           様々な支払いに対応
         %p.Feature__text
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-  %section.ItemIndex
-  %section.ItemIndex
+  %section.ItemIndexContainer
+    %h2.ItemIndexHeading
+      ピックアップカテゴリー
+    .IndexPanel
+      .IndexCategory
+        = link_to root_path do
+          %h3.ListHeading 新規投稿商品
+      .IndexPanel
+        .ItemList
+          = link_to "#" do
+            %figure.ItemList__image
+              = image_tag "material/icon/icon-02.png"
+            .ItemList__info
+              %h3.ItemName
+              .ItemText
+                %ul
+                  %li 1,000円
+                  %li
+                    = icon("fa", "star")
+                    0
+                %p (税込)
+  %section.ItemIndexContainer
 = render "users/advertising_&_footer"
