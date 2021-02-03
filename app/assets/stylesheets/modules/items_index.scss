@@ -26,17 +26,8 @@
       margin-top: 16px;
     }
     &__btn {
-      display: flex;
+      @include a_g_btn;
       margin-top: 24px;
-      .appbtn, .googlebtn {
-        width: 180px;
-      }
-      a:first-child {
-        margin-right: 10px;
-      }
-      a img {
-        width: 100%;
-      }
     }
   }
 }
@@ -110,6 +101,13 @@
     }
     li:last-child{
       margin: 16px 0 0 0;
+    }
+  }
+}
+.FurimaAdvertise {
+  .FurimaAdCopy {
+    &__btn {
+      @include a_g_btn;
     }
   }
 }

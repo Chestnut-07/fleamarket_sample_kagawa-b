@@ -2,3 +2,16 @@ $border-color: #efefef;
 $view-background-color: whitesmoke;
 $str-line-height: 140%;
 $symbol-color: #3CCACE;
+@mixin a_g_btn {
+  display: flex;
+  .appbtn, .googlebtn {
+    width: 180px;
+  }
+  a:first-child {
+    margin-right: 10px;
+  }
+  a img {
+    width: 100%;
+  }
+
+}
