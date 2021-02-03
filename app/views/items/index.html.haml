@@ -58,6 +58,30 @@
         = link_to "#", class: "googlebtn" do
           = image_tag 'material/pict/googlebtn.svg'
   %section.FurimaFeatures
+    %h2.FeatureTitle
+      FURIMAの特徴
+    .Features
+      %section.Feature
+        %figure.Feature__image
+          = image_tag "material/icon/icon-01.png"
+        %h3.Feature__heading
+          簡単に売り買いできる
+        %p.Feature__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.Feature
+        %figure.Feature__image
+          = image_tag "material/icon/icon-02.png"
+        %h3.Feature__heading
+          売上金は即日振込みに対応
+        %p.Feature__text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %section.Feature
+        %figure.Feature__image
+          = image_tag "material/icon/icon-03.png"
+        %h3.Feature__heading
+          様々な支払いに対応
+        %p.Feature__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   %section.ItemIndex
   %section.ItemIndex
 = render "users/advertising_&_footer"
