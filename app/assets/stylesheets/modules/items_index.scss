@@ -166,14 +166,24 @@
       display: flex;
       flex-direction: column;
       padding: 0 20px;
+      text-align: center;
       &__image {
         width: 70%;
+        margin: 0 auto;
+        line-height: 120px;
         img {
           width: 100%;
+          vertical-align: bottom;
         }
       }
-      &__heading {}
-      &__text {}
+      &__heading {
+        margin: 38px 0 10px;
+        font-size: 19px;
+        font-weight: bold;
+      }
+      &__text {
+        margin-bottom: 40px;
+      }
     }
   }
 }
