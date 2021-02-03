@@ -109,7 +109,25 @@
   height: 400px;
   background-size: cover;
   background-position: bottom right;
+  display: flex;
+  align-items: center;
   .FurimaAdCopy {
+    color: #fff;
+    text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    &__heading {
+      font-size: 27px;
+      font-weight: bold;
+      line-height: 1.4
+    }
+    &__text {
+      font-size: 18px;
+      margin: 20px 0 30px;
+      line-height: 1.5;
+    }
     &__btn {
       @include apple_google_btn;
     }
