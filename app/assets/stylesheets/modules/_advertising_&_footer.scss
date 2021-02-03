@@ -17,7 +17,7 @@
       text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
     }
     &__btn {
-      @include a_g_btn;
+      @include apple_google_btn;
       justify-content: center;
       margin: 20px auto;
     }

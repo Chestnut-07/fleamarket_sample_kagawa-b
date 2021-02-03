@@ -26,7 +26,7 @@
       margin-top: 16px;
     }
     &__btn {
-      @include a_g_btn;
+      @include apple_google_btn;
       margin-top: 24px;
     }
   }
@@ -107,7 +107,7 @@
 .FurimaAdvertise {
   .FurimaAdCopy {
     &__btn {
-      @include a_g_btn;
+      @include apple_google_btn;
     }
   }
 }
