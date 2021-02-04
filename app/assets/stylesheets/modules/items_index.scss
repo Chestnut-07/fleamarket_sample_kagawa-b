@@ -237,8 +237,27 @@
           }
         }
         &__info {
-          .ItemName {}
-          .ItemText {}
+          padding: 16px;
+          color: #333;
+          .ItemName {
+            font-size: 16px;
+            line-height: 1.5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+          }
+          .ItemText {
+            ul {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            p {
+              font-size: 10px;
+
+            }
+          }
         }
       }
     }
