@@ -189,8 +189,10 @@
 }
 .ItemIndexContainer {
   padding: 80px 0 0;
-  background-color: #f8f8f8;
   height: 100%;
+  &:last-child {
+    padding-bottom: 80px;
+  }
   .ItemIndexHeading {
     font-size: 28px;
     font-weight: bold;
@@ -218,6 +220,7 @@
           background-color: #fff;
           width: 100%;
           display: inline-block;
+          box-shadow: 0 10px 25px rgba($color: #000000, $alpha: 0.15);
         }
         &__image {
           width: 100%;
