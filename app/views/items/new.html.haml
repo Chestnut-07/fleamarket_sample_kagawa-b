@@ -56,7 +56,7 @@
             任意
           = f.text_field :brand, placeholder: "例)HERMES"
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
-          %label{for: "condition"}
+          = f.label :condition_id do
             商品の状態
           %span.FormItemPanel__Require
             必須
