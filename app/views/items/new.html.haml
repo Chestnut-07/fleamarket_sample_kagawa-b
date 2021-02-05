@@ -68,7 +68,7 @@
           = link_to "#" do
             = icon("far","question-circle")
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
-          %label{for: "shipping"}
+          = f.label :shipping_fee_payer_id do
             配送料の負担
           %span.FormItemPanel__Require
             必須
