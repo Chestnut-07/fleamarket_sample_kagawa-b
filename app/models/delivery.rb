@@ -11,4 +11,7 @@ class Delivery < ActiveHash::Base
     {id: 9, name: 'クリックポスト'},
     {id: 10, name: 'ゆうパケット'}
   ]
+
+  include ActiveHash::Associations
+  has_many :items
 end
