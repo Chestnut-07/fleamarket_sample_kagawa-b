@@ -74,7 +74,7 @@
             必須
           = f.collection_select(:shipping_fee_payer_id, ShippingFeePayer.all, :id, :name, { include_blank: "--選択してください--" }, { id: "shipping", required: true})
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
-          %label{for: "prefecture"}
+          = f.label :item_prefecture_id do
             発送元の地域
           %span.FormItemPanel__Require
             必須
