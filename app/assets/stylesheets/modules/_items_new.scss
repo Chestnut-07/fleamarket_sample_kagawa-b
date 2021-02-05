@@ -8,12 +8,11 @@
   background-color: $view-background-color;
   font-size: 14px;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  img {
-    width: 185px;
-    height: 49px;
-  }
-  a {
-    color: blue;
+  .SellHeader, .SellFooter {
+    img {
+      width: 185px;
+      height: 49px;
+    }
   }
   .SellHeader {
     height: 128px;

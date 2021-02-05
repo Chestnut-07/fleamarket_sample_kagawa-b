@@ -18,6 +18,10 @@
       width: 300px;
       height: 300px;
       margin: 10px auto;
+      img {
+        width: 300px;
+        height: 300px;
+      }
     }
     &--price{
       text-align: center;
@@ -106,14 +110,17 @@
         width: 150px;
         text-align: center;
         color: #33cc99;
+        text-decoration: none;
       }
       &-report{
         width: 150px;
+        color: #333;
         border-radius: 3px;
         border: 1px solid black;
         text-align: center;
         font-size: 13px;
         line-height: 32px;
+        text-decoration: none;
       }
     }
   }
