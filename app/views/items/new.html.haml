@@ -29,7 +29,7 @@
             必須
           = f.text_field :name, placeholder: "40文字まで", required: true
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
-          %label{for: "item_introduction"}
+          = f.label :introduction do
             商品の説明
           %span.FormItemPanel__Require
             必須
