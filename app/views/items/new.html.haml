@@ -48,7 +48,7 @@
             カテゴリー名
           %span.FormItemPanel__Require
             必須
-          = f.collection_select(:category_id, @category, :id, :name, { include_blank: '--選択してください--'}, { id: "categories", required: true})
+          = f.collection_select(:category_id, @category, :id, :name, { include_blank: '--選択してください--'}, { class: "categories", required: true})
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           = f.label :brand do
             ブランド
