@@ -18,6 +18,7 @@ $teal-color: teal;
 
 .main {
   display: block;
+  box-sizing: border-box
 }
 
 .section {
@@ -115,11 +116,71 @@ $teal-color: teal;
   height: 250px;
 }
 
-.Primary {
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  background: whitesmoke;
-  font-size: 14px;
+.content {
+  width: 456px;
+  margin: 0 auto;
+  background-color: $white-color;
+  .content-message {
+    padding: 40px 64px;
+    text-align: center;
+    p {
+      font-size: 14px;
+    }
+  }
+  .content-logo {
+    display: block;
+    margin: 8px 0 0;
+    border-radius: 4px;
+    border: 1px solid #0099e8;
+    background: #0099e8;
+    color: $white-color;
+    line-height: 40px;
+    text-decoration: none;
+  }
+  .content-list {
+    border-top: 1px solid #eee;
+    padding: 32px 64px;
+  }
 }
 
+.content-btn_g {
+  margin: 16px 0 0;
+  border: #979797 solid 1px;
+  color: #333;
+  display: block;
+  text-align: center;
+  line-height: 48px;
+  background: $white-color;
+  border-radius: 5px;
+  position: relative;
+}
+ .content-btn_f {
+    margin: 16px 0 0;
+    background: #385185;
+    color: $white-color;
+    display: block;
+    line-height: 48px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+
+  .content-btn_a {
+    margin: 15px 0 0;
+    background: #000;
+    color: $white-color;
+    display: block;
+    line-height: 48px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .content-icon {
+    font-size: 20px;
+    top: 30%;
+    left: 16px;
+    position: absolute;
+    font-size: 20px;
+  }
+  
