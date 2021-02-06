@@ -12,4 +12,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def get_categories
+    cuurent_category = Category.find(params[:id])
+    @children = current_category.children
+  end
+
 end
