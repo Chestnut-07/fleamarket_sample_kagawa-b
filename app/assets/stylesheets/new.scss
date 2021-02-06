@@ -3,7 +3,7 @@ $white-color: #fff;
 $gray-color: #ccc;
 $red-color: #EA352D;
 $teal-color: teal;
-
+$blue-green: #3CCACE;
 .content-sign-up {
  
   background-color: whitesmoke;
@@ -198,12 +198,13 @@ $teal-color: teal;
       margin: 30px 0 0;
     }
     .btn {
-      background: #3CCACE;
-      border: 1px solid #3CCACE;
-      color: #fff;
+      background: $blue-green;
+      border: 1px solid $blue-green;
+      color: $white-color;
       height: 48px;
       width: 100%;
       margin-top: 30px;
+      border-radius: 4px;
       cursor: pointer;
     }
   }
