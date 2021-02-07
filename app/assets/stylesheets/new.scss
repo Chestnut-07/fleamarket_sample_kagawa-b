@@ -3,7 +3,9 @@ $white-color: #fff;
 $gray-color: #ccc;
 $red-color: #EA352D;
 $teal-color: teal;
+$blue-color:  #0099e8;
 $blue-green: #3CCACE;
+
 .content-sign-up {
  
   background-color: whitesmoke;
@@ -131,8 +133,8 @@ $blue-green: #3CCACE;
     display: block;
     margin: 8px 0 0;
     border-radius: 4px;
-    border: 1px solid #0099e8;
-    background: #0099e8;
+    border: 1px solid $blue-color;
+    background: $blue-color;
     color: $white-color;
     line-height: 40px;
     text-decoration: none;
@@ -210,7 +212,7 @@ $blue-green: #3CCACE;
   }
 
   .note {
-    color: #0099e8;
+    color: $blue-color;
     text-decoration: none;
     display: block;
     margin: 40px 0 0;
