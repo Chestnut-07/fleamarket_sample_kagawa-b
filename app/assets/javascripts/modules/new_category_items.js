@@ -1,4 +1,5 @@
 $(function(){
+
   function buildselectbox(children) {
     let boxes="";
     children.forEach(function(child){
@@ -6,6 +7,15 @@ $(function(){
                 <option value="${child.id}">${child.name}</option>
                 `;
     });
+
+    const select=`
+    <select class="categories" required="required" name="category_id">
+      <option value="">--選択してください--</option>
+      ${boxes}
+    </select>
+    `
+    return select
+  }
   
   $('.RegistrationForm').on('change','#categories',function(){
     alert('change!')
