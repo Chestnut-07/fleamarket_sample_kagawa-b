@@ -6,108 +6,63 @@
   .main
     .section
       %h2.main-logo 新規ユーザー登録
-      =form_with html:{class:"main-form"} do |f|
+      = form_with model: @user, url: user_registration_path, class: "main-form", local: true do |f| 
         .name
           %label.name-user ニックネーム
           %span.name-content 必須
-          =f.text_field :hoge ,class:"name-form",placeholder: "例:ほげほげ", size: "30"
+          =f.text_field :nickname ,class:"name-form",placeholder: "例:ほげほげ", size: "30"
         .name
           %label.name-user メールアドレス
           %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "PC,携帯どちらでも可"
+          =f.text_field :email,class:"name-form",placeholder: "PC,携帯どちらでも可"
         .name
           %label.name-user パスワード
           %span.name-content 必須
-          =f.password_field :hoge,class:"name-form",placeholder: "6文字以上の半角英数字"
+          =f.password_field :password,class:"name-form",placeholder: "７文字以上の半角英数字"
         .name
           %label.name-user パスワード
           %span.name-content 必須
-          =f.password_field :hoge,class:"name-form",placeholder: "6文字以上の半角英数字"
+          =f.password_field :password,class:"name-form",placeholder: "7文字以上の半角英数字"
         .name
           %h2.main-logo 本人確認
           %p.logo 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客様に公開されることはありません。
         .name
           %label.name-user お名前（全角）
           %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "例）山田"
-          =f.text_field :hoge,class:"name-form",placeholder: "例）太郎"
+          =f.text_field :family_name,class:"name-form",placeholder: "例）山田"
+          =f.text_field :first_name,class:"name-form",placeholder: "例）太郎"
         .name
           %label.name-user お名前カナ（全角）
           %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "例）ヤマダ"
-          =f.text_field :hoge,class:"name-form",placeholder: "例）タロウ"
+          =f.text_field :family_name_kana,class:"name-form",placeholder: "例）ヤマダ"
+          =f.text_field :first_name_kana,class:"name-form",placeholder: "例）タロウ"
         .name-second
           %label.name-user-second
             生年月日
             %span.name-content-second 必須
-          = f.date_select :birthday, use_month_numbers: true, start_year: 1970, end_year: Time.now.year, prompt:"--", class:"main__box__bottom__content__group3__box__barthday__box"
-        .name
-          %label.name-user 都道府県
-          %span.name-content 必須
-          %select.name-form{ name: "pref"}
-            %option{ selected: "selected", value: ""} 選択してください
-            %option{ value: "北海道"} 北海道
-            %option{ value: "青森県"} 青森県
-            %option{ value: "岩手県"} 岩手県
-            %option{ value: "宮城県"} 宮城県
-            %option{ value: "秋田県"} 秋田県
-            %option{ value: "山形県"} 山形県
-            %option{ value: "福島県"} 福島県
-            %option{ value: "茨城県"} 茨城県
-            %option{ value: "栃木県"} 栃木県
-            %option{ value: "群馬県"} 群馬県
-            %option{ value: "埼玉県"} 埼玉県
-            %option{ value: "千葉県"} 千葉県
-            %option{ value: "東京都"} 東京都
-            %option{ value: "神奈川県"} 神奈川県
-            %option{ value: "新潟県"} 新潟県
-            %option{ value: "富山県"} 富山県
-            %option{ value: "石川県"} 石川県
-            %option{ value: "福井県"} 福井県
-            %option{ value: "山梨県"} 山梨県
-            %option{ value: "長野県"} 長野県
-            %option{ value: "岐阜県"} 岐阜県
-            %option{ value: "静岡県"} 静岡県
-            %option{ value: "愛知県"} 愛知県
-            %option{ value: "三重県"} 三重県
-            %option{ value: "滋賀県"} 滋賀県
-            %option{ value: "京都府"} 京都府
-            %option{ value: "大阪府"} 大阪府
-            %option{ value: "兵庫県"} 兵庫県
-            %option{ value: "奈良県"} 奈良県
-            %option{ value: "和歌山県"} 和歌山県
-            %option{ value: "鳥取県"} 鳥取県
-            %option{ value: "島根県"} 島根県
-            %option{ value: "岡山県"} 岡山県
-            %option{ value: "広島県"} 広島県
-            %option{ value: "山口県"} 山口県
-            %option{ value: "徳島県"} 徳島県
-            %option{ value: "香川県"} 香川県
-            %option{ value: "愛媛県"} 愛媛県
-            %option{ value: "高知県"} 高知県
-            %option{ value: "福岡県"} 福岡県
-            %option{ value: "佐賀県"} 佐賀県
-            %option{ value: "長崎県"} 長崎県
-            %option{ value: "熊本県"} 熊本県
-            %option{ value: "大分県"} 大分県
-            %option{ value: "宮崎県"} 宮崎県
-            %option{ value: "鹿児島県"} 鹿児島県
-            %option{ value: "沖縄県"} 沖縄県
-        .name
-          %label.name-user 市区町村
-          %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "例）高松市"
-        .name
-          %label.name-user 番地
-          %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "例）0000-0"
-        .name
-          %label.name-user 建物名
-          %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "例）シンボルタワー"
-        .name
-          %label.name-user 電話番号
-          %span.name-content 必須
-          =f.text_field :hoge,class:"name-form",placeholder: "例）000-0000-0000"
-          =f.submit :hoge,class:"send",value: "登録する"
+          = f.date_select :birth_date, use_month_numbers: true, start_year: 1970, end_year: Time.now.year, prompt:"--", class:"main__box__bottom__content__group3__box__barthday__box"
+        =f.fields_for :destination do |d|
+          .name
+            %label.name-user 郵便番号
+            %span.name-content 必須
+            =d.text_field :post_code,class:"name-form",placeholder: "例）000-0000"
+          .name
+            %label.name-user 都道府県
+            %span.name-content 必須
+            = d.collection_select :prefecture_id, Prefecture.all, :id, :name,{} ,{class:"name-form"}
+          .name
+            %label.name-user 市区町村
+            %span.name-content 必須
+            =d.text_field :city,class:"name-form",placeholder: "例）高松市"
+          .name
+            %label.name-user 番地
+            %span.name-content 必須
+            =d.text_field :house_number,class:"name-form",placeholder: "例）0000-0"
+          .name
+            %label.name-user 建物名
+            =d.text_field :building_name,class:"name-form",placeholder: "例）シンボルタワー"
+          .name
+            %label.name-user 電話番号 
+            =d.text_field :phone_number,class:"name-form",placeholder: "例）000-0000-0000"
+          =f.submit "登録する", class:"send"
     .footer
