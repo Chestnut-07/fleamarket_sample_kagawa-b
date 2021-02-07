@@ -50,12 +50,12 @@
           %span.FormItemPanel__Require
             必須
           = f.collection_select(:category_id, @category, :id, :name, { include_blank: '--選択してください--'}, { class: "categories", required: true})
-        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
-          = f.label :brand do
-            ブランド
-          %span.FormItemPanel__Any
-            任意
-          = f.text_field :brand, placeholder: "例)HERMES"
+        -# .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+        -#   = f.label :brand do
+        -#     ブランド
+        -#   %span.FormItemPanel__Any
+        -#     任意
+        -#   = f.text_field :brand, placeholder: "例)HERMES"
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           = f.label :condition_id do
             商品の状態
