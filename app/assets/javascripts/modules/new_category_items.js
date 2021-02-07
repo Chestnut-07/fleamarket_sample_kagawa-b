@@ -1,4 +1,11 @@
 $(function(){
+  function buildselectbox(children) {
+    let boxes="";
+    children.forEach(function(child){
+      boxes += `
+                <option value="${child.id}">${child.name}</option>
+                `;
+    });
   
   $('.RegistrationForm').on('change','#categories',function(){
     alert('change!')
