@@ -41,12 +41,12 @@
         .items__show--info-tax_real.c
           .text
             = @item.shipping_fee_payer[:name]
-      .items__show--info-howto.b
-        .items__show--info-howto_type.a
-          配送の方法
-        .items__show--info-howto_real.c
-          .text
-            = @item.delivery[:name]
+      -# .items__show--info-howto.b
+      -#   .items__show--info-howto_type.a
+      -#     配送の方法
+      -#   .items__show--info-howto_real.c
+      -#     .text
+      -#       = @item.delivery[:name]
       .items__show--info-location.b
         .items__show--info-location_type.a
           発送元の地域
