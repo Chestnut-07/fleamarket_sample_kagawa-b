@@ -1,0 +1,134 @@
+.SellContainer
+  %header.SellHeader
+    %h1
+      = link_to image_tag("material/logo/logo.png", alt: "サンプル画像"), "/"
+  %main.SellNewContainer
+    = form_with model: nil, html: {class: "RegistrationForm"}, local: true do |f|
+      .FormItemPanel
+        %label
+          出品画像
+        %span.FormItemPanel__Require
+          必須
+        %p.FormItemPanel__InnerText
+          写真を1枚アップロードしてください
+        .FormItemPanel__Image
+          .FormItemPanel__Imagepartition
+          .FormItemPanel__Imagebox
+            = f.label :image, class: "FormItemPanel__Inputimage" do
+              = f.file_field :image, class: 'FormItemPanel__Hidden', required: true
+              .FormItemPanel__Cen
+                = icon("fa","camera", class:"FormItemPanel__Icon")
+                %p.FormItemPanel__Image-innerText
+                  クリックしてファイルをアップロード
+      %hr.FormItemPanel__Separator
+      .FormItemPanel
+        .FormItemPanel__Contentbox
+          = f.label :name do
+            商品名
+          %span.FormItemPanel__Require
+            必須
+          = f.text_field :name, placeholder: "40文字まで", required: true
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :introduction do
+            商品の説明
+          %span.FormItemPanel__Require
+            必須
+          = f.text_area :introduction, placeholder: "商品の説明(1,000文字以内)\n(色、素材、重さ、定価、注意点など)\n\n例) 2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "7", required: true
+          .FormItemPanel__Strcount
+            %span
+              0
+              \/1000
+
+      %hr.FormItemPanel__Separator
+      .FormItemPanel
+        %p.FormItemPanel__Sub
+          商品の詳細
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :category_id do
+            カテゴリー名
+          %span.FormItemPanel__Require
+            必須
+          = f.select :category_id, [['レディース', "women"], ['メンズ', "men"], ['ベビー・キッズ', "baby_kid"], ['スマホ・タブレット', "phone_tablet"], ['ゲーム', "game"], ['おもちゃ・ホビーグッズ', "toy"], ['本・メディア', "book_media"], ['チケット', "ticket"], ['スポーツ・レジャー', "sport_leisure"]], { include_blank: '--選択してください--'}, { id: "categories", required: true}
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :brand do
+            ブランド
+          %span.FormItemPanel__Any
+            任意
+          = f.text_field :brand, placeholder: "例)HERMES"
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :condition_id do
+            商品の状態
+          %span.FormItemPanel__Require
+            必須
+          = f.collection_select(:condition_id, Condition.all, :id, :name, { include_blank: "--選択してください--" }, { id: "condition", required: true})
+      %hr.FormItemPanel__Separator
+      .FormItemPanel
+        %p.FormItemPanel__Sub
+          配送について
+          = link_to "#" do
+            = icon("far","question-circle")
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :shipping_fee_payer_id do
+            配送料の負担
+          %span.FormItemPanel__Require
+            必須
+          = f.collection_select(:shipping_fee_payer_id, ShippingFeePayer.all, :id, :name, { include_blank: "--選択してください--" }, { id: "shipping", required: true})
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :item_prefecture_id do
+            発送元の地域
+          %span.FormItemPanel__Require
+            必須
+          = f.collection_select(:item_prefecture_id, Prefecture.all, :id, :name, { include_blank: "--選択してください--" }, { id: "prefecture", required: "required"})
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+          = f.label :preparation_day_id do
+            発送までの日数
+          %span.FormItemPanel__Require
+            必須
+          = f.collection_select(:preparation_day_id, PreparationDay.all, :id, :name, { include_blank: "--選択してください--" }, { id: "preparation", required: true})
+      %hr.FormItemPanel__Separator
+      .FormItemPanel
+        %p.FormItemPanel__Sub
+          価格(¥300〜9,999,999)
+          = link_to "#" do
+            = icon("far","question-circle")
+        .FormItemPanel__Sellprice
+          .FormItemPanel__Sellbox
+            = f.label :Price do
+              販売価格
+            %span.FormItemPanel__Require
+              必須
+          %span.FormItemPanel__Doller
+            ¥
+          = f.number_field :price, id: "Price",class: "FormItemPanel__Price", placeholder: "0", required: true
+        .FormItemPanel__Sellprice
+          %p.FormItemPanel__Sellbox
+            販売手数料(10%)
+          %span.FormItemPanel__Feevalue
+            ー
+        %hr.FormItemPanel__Separator
+        .FormItemPanel__Sellprice
+          %p.FormItemPanel__Sellbox
+            販売利益
+          %span.FormItemPanel__Totalvalue
+            ー
+        .FormItemPanel__Mainfooter
+          .FormItemPanel__Btnbox
+            = f.submit "出品する", class: "FormItemPanel__Btn FormItemPanel__Submit FormItemPanel__Nbtn"
+            = link_to "下書きに保存", "/", class: "FormItemPanel__Btn FormItemPanel__Draft FormItemPanel__Nbtn"
+            = link_to "戻る", "/", class: "FormItemPanel__Nbtn"
+        .FormItemPanel__Mainfooter
+          %p
+            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。また、出品をもちまして 加盟店規約に同意したことになります。
+  %footer.SellFooter
+    %nav
+      %ul
+        %li
+          = link_to 'プライバシーポリシー', "#"
+        %li
+          = link_to 'フリマ利用規約', "#"
+        %li
+          = link_to '特定商取引に関する表記', "#"
+    = link_to image_tag("material/logo/logo-white.png", alt: "ロゴ画像"), "/"
+    %p
+      %small
+        ©FURIMA
