@@ -1,79 +1,75 @@
 .items
   .items__show
     .items__show--name
-      トレーナー
+      = @item.name
     .items__show--image
+      = image_tag "/images/test_image.jpg"
     .items__show--price
-      ¥3000
+      = @item.price
     .items__show--tax
-      (税込) 送料込み
-    .items__show--size
-      Mサイズ
+      = @item.shipping_fee_payer[:name]
+    .items__show--btn
+      - if current_user == @item.seller
+        = link_to "商品を編集する", "#", class: "edit_btn btn"
+        = link_to "商品を削除する", "#", class: "delete_btn btn"
+      - else
+        = link_to "購入画面に進む", "#", class: "purchase_btn btn"
     .items__show--sentence
-      %p 
-        新品未使用です。
-      %p
-        自分には大きかったので出品します
+      = @item.introduction
     .items__show--info
       .items__show--info-name.b
         .items__show--info-name_type.a
           出品者
         .items__show--info-name_real.c
           .text
-            たかし
+            = @item.seller[:nickname]
       .items__show--info-category.b
         .items__show--info-category_type.a
           カテゴリー
         .items__show--info-category_real.c
           .text
             衣類
-      .items__show--info-brand.b
-        .items__show--info-brand_type.a
-          ブランド
-        .items__show--info-brand_real.c
-          .text
-            nike
       .items__show--info-condition.b
         .items__show--info-condition_type.a
           商品の状態
         .items__show--info-condition_real.c
           .text
-            とても良い
+            = @item.condition[:name]
       .items__show--info-tax.b
         .items__show--info-tax_type.a
           配送料の負担
         .items__show--info-tax_real.c
           .text
-            送料込み
+            = @item.shipping_fee_payer[:name]
       .items__show--info-howto.b
         .items__show--info-howto_type.a
           配送の方法
         .items__show--info-howto_real.c
           .text
-            ゆうパック
+            = @item.delivery[:name]
       .items__show--info-location.b
         .items__show--info-location_type.a
           発送元の地域
         .items__show--info-location_real.c
           .text
-            香川県
+            = @item.prefecture[:name]
       .items__show--info-days.b
         .items__show--info-days_type.a
           発送日の目安
         .items__show--info-days_real.c
           .text
-            ２〜3日
+            = @item.preparation_day[:name]
     .items__show--menu
-      .items__show--menu-like
+      = link_to "#", class: "items__show--menu-like" do
         = icon('fas', 'star', class: "star")
         お気に入り
-      .items__show--menu-report
+      = link_to "#", class: "items__show--menu-report" do
         = icon('fas', 'flag')
         不適切な商品を報告
   
   .items__comment
     = form_with local: true do |f| 
-      = f.text_field :text, class: 'comment', placeholder: 'type a message'
+      = f.text_area :text, class: 'comment', placeholder: 'type a message',rows: "7"
       .items__comment--alart
         %p
           相手のことを考え丁寧なコメントを心がけましょう。 

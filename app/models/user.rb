@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   has_one :destination, dependent: :destroy
   accepts_nested_attributes_for :destination
 
@@ -20,4 +21,7 @@ class User < ApplicationRecord
   validates :first_name_kana,         presence: true, format: { with: VALID_NAME_REGEX }
   validates :birth_date,              presence: true
   
+
+  has_many :items, dependent: :destroy
+  has_one :credit_card, dependent: :destroy
 end

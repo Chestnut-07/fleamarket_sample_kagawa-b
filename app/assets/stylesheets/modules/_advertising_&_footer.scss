@@ -17,19 +17,9 @@
       text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
     }
     &__btn {
-      display: flex;
+      @include apple_google_btn;
       justify-content: center;
       margin: 20px auto;
-      a:first-child {
-        margin-right: 10px;
-      }
-      a img {
-        width: 100%;
-        vertical-align: bottom;
-      }
-      .appbtn,.googlebtn {
-        width: 180px;
-      }
     }
   }
 }
