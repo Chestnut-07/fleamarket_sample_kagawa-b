@@ -17,8 +17,7 @@ $(function(){
     return select
   }
   
-  $('.RegistrationForm').on('change','#categories',function(){
-    alert('change!')
+  $('.RegistrationForm').on('change','.categories',function(){
     $(this).nextAll().remove()
     const category_id = $(this).val()
 
