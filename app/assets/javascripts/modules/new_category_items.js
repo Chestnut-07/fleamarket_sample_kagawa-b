@@ -27,5 +27,18 @@ $(function(){
       data: {category_id: category_id},
       dataType: 'json'
     })
+    .done(function(children) {
+
+      if(children.length==0){
+        return false
+      }
+
+      const select_form = buildselectbox(children)
+      const target = $('.Category')
+      target.append(select_form)
+
+    })
+    .fail(function() {
+    });
   })
-})
+});
