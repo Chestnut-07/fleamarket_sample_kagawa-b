@@ -8,7 +8,7 @@
 }
 .buymain{
     width:100%;
-    background:whitesmoke;
+    background:$view-background-color;
     &-block{
         height:100%;
         width:100%;
@@ -26,7 +26,7 @@
     &-title{
        height:100px;
        width:100%;
-       border-bottom:1px solid rgba(0,0,0,0.1);
+       border-bottom:1px solid $border-color;
        display:flex;
        align-items:center;
        justify-content:center;
@@ -38,7 +38,7 @@
     &-lists{
        height:200px;
        width:100%;
-       border-bottom:1px solid rgba(0,0,0,0.1);
+       border-bottom:1px solid $border-color;
        display:flex;
        align-items: center;
        &-block{
@@ -72,7 +72,7 @@
     &-payment{
         height:140px;
         width:100%;
-        border-bottom:1px solid rgba(0,0,0,0.1);
+        border-bottom:1px solid $border-color;
         display:flex;
         align-items:center;
         justify-content: center;
@@ -90,7 +90,6 @@
         font-weight:bold;
         display:flex;
         align-items:center;
-        // justify-content: flex-end;
        } 
        &-right{
         height:100px;
@@ -104,13 +103,11 @@
      }
      &-method{
         width:100%;
-        border-bottom:1px solid rgba(0,0,0,0.1);
+        border-bottom:1px solid $border-color;
         padding:30px 2.5%;
-
         h2{
             font-weight:bold;
         }
-
         &-block{
         margin-top:16px;
         font-size:12px;
@@ -122,14 +119,12 @@
      }
      &-address{
         width:100%;
-        border-bottom:1px solid rgba(0,0,0,0.1);
+        border-bottom:1px solid $border-color;
         padding:30px 2.5%;
         margin-bottom:25px;
-
         h2{
             font-weight:bold;
         }
-
         &-block{
         margin-top:16px;
         font-size:12px;
@@ -145,10 +140,9 @@
         display:flex;
         align-items:center;
         justify-content:center;
-
         input{
             font-weight:bold;
-            background-color: #3ccace;
+            background-color: $symbol-color;
             display:block;
             width:300px;
             height:40px;
