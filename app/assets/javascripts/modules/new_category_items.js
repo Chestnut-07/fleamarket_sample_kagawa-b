@@ -9,7 +9,7 @@ $(function(){
     });
 
     const select=`
-    <select class="categories" required="required" name="category_id">
+    <select class="categories" required="required" name="item[category_id]">
       <option value="">--選択してください--</option>
       ${boxes}
     </select>
