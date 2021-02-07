@@ -23,7 +23,7 @@ $(function(){
 
     $.ajax({
       type: "GET",
-      url: "api/items/categories",
+      url: "/api/items/categories",
       data: {category_id: category_id},
       dataType: 'json'
     })
