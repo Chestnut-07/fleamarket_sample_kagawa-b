@@ -79,7 +79,7 @@
             発送元の地域
           %span.FormItemPanel__Require
             必須
-          = f.collection_select(:item_prefecture_id, Prefecture.all, :id, :name, { include_blank: "--選択してください--" }, { id: "prefecture", required: "required"})
+          = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { include_blank: "--選択してください--" }, { id: "prefecture", required: "required"})
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           = f.label :preparation_day_id do
             発送までの日数
