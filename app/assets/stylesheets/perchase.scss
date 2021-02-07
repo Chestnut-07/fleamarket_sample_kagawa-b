@@ -1,0 +1,155 @@
+*{
+    box-sizing:border-box;
+}
+.header{
+    width:100%;
+    height:100px;
+    background:rgb(214, 202, 204);
+}
+.buymain{
+    width:100%;
+    background:$view-background-color;
+    &-block{
+        height:100%;
+        width:100%;
+        max-width:700px;
+        background:white;
+        margin:0 auto;
+        padding-bottom:25px;
+    }
+    &-inner{
+        height:90%;
+        width:70%;
+        background:white;
+        margin:0 auto;
+    }
+    &-title{
+       height:100px;
+       width:100%;
+       border-bottom:1px solid $border-color;
+       display:flex;
+       align-items:center;
+       justify-content:center;
+       h2{
+        font-size:26px;
+        font-weight:bold;
+       }
+    }
+    &-lists{
+       height:200px;
+       width:100%;
+       border-bottom:1px solid $border-color;
+       display:flex;
+       align-items: center;
+       &-block{
+         height:140px;
+         width:100%;
+         display:flex;
+       }
+       &-left{
+        height:140px;
+        width:50%;
+        display:flex;
+        img{
+            height:140px;
+            width:100px;
+            margin-right:20px;
+        } 
+       }
+       &-right{
+        height:140px;
+        width:50%;
+        display:flex;
+        align-items: center;
+        .p-left{
+            margin-right:20px
+        }  
+        .p-right{
+            font-weight:bold;
+        }
+       }
+    }
+    &-payment{
+        height:140px;
+        width:100%;
+        border-bottom:1px solid $border-color;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+       &-block{
+        height:100px;
+        width:95%;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+       }
+       &-left{
+        height:100px;
+        width:50%;
+        font-size:20px;
+        font-weight:bold;
+        display:flex;
+        align-items:center;
+       } 
+       &-right{
+        height:100px;
+        width:50%;
+        font-size:20px;
+        font-weight:bold;
+        display:flex;
+        align-items:center;
+        justify-content: flex-end;
+       }
+     }
+     &-method{
+        width:100%;
+        border-bottom:1px solid $border-color;
+        padding:30px 2.5%;
+        h2{
+            font-weight:bold;
+        }
+        &-block{
+        margin-top:16px;
+        font-size:12px;
+            img{
+                height:12px;
+                margin-top:8px;
+            }
+        }
+     }
+     &-address{
+        width:100%;
+        border-bottom:1px solid $border-color;
+        padding:30px 2.5%;
+        margin-bottom:25px;
+        h2{
+            font-weight:bold;
+        }
+        &-block{
+        margin-top:16px;
+        font-size:12px;
+        display:flex
+        }
+        &-right{
+        margin-left:250px;
+        color:#0095ee;
+        }
+     }
+     &-perchase{
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        input{
+            font-weight:bold;
+            background-color: $symbol-color;
+            display:block;
+            width:300px;
+            height:40px;
+            color:white;
+            border:none;
+            font-size:12px;
+            border-radius:5px;
+        }
+     }
+}

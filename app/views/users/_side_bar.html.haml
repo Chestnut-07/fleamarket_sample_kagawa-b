@@ -1,0 +1,33 @@
+.SideBar
+  %nav.SideNav
+    %ul.SideNavBox
+      %li
+        = link_to user_path(:id), class: "SideNavBox__list", rel: "nofollow" do
+          マイページ
+          = icon('fas', 'chevron-right')
+      %li
+        = link_to new_items_path, class: "SideNavBox__list", rel: "nofollow" do
+          出品する
+          = icon('fas', 'chevron-right')
+      %li
+        = link_to "#", class: "SideNavBox__list", rel: "nofollow" do
+          出品した商品 - 出品中
+          = icon('fas', 'chevron-right')
+      %li
+        = link_to "#", class: "SideNavBox__list", rel: "nofollow" do
+          出品した商品 - 売却済み
+          = icon('fas', 'chevron-right')
+      %li
+        = link_to "#", class: "SideNavBox__list", rel: "nofollow" do
+          購入した商品
+          = icon('fas', 'chevron-right')
+    %h3.SideTitle 設定
+    %ul.SideNavBox
+      %li
+        = link_to credit_cards_path, class: "SideNavBox__list", rel: "nofollow" do
+          支払い方法
+          = icon('fas', 'chevron-right')
+      %li
+        = link_to "#", class: "SideNavBox__list", rel: "nofollow", method: "delete" do
+          ログアウト
+          = icon('fas', 'chevron-right')
