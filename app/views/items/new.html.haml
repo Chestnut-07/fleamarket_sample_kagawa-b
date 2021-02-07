@@ -14,12 +14,13 @@
         .FormItemPanel__Image
           .FormItemPanel__Imagepartition
           .FormItemPanel__Imagebox
-            = f.label :image, class: "FormItemPanel__Inputimage" do
-              = f.file_field :image, class: 'FormItemPanel__Hidden', required: true
-              .FormItemPanel__Cen
-                = icon("fa","camera", class:"FormItemPanel__Icon")
-                %p.FormItemPanel__Image-innerText
-                  クリックしてファイルをアップロード
+            = f.fields_for :item_image do |file|
+              = file.label :image, class: "FormItemPanel__Inputimage" do
+                = file.file_field :image, class: 'FormItemPanel__Hidden', required: true
+                .FormItemPanel__Cen
+                  = icon("fa","camera", class:"FormItemPanel__Icon")
+                  %p.FormItemPanel__Image-innerText
+                    クリックしてファイルをアップロード
       %hr.FormItemPanel__Separator
       .FormItemPanel
         .FormItemPanel__Contentbox
