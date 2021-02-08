@@ -89,9 +89,9 @@
       .IndexCategory
         = link_to root_path do
           %h3.ListHeading 新規投稿商品
-        .ItemLists
-          - @new_items.each do |item|
-            = render partial: "item", locals: { item: item }
+      .ItemLists
+        - @new_items.each do |item|
+          = render partial: "item", locals: { item: item }
   %section.ItemIndexContainer
     %h2.ItemIndexHeading
       ピックアップブランド
@@ -99,7 +99,7 @@
       .IndexCategory
         = link_to root_path do
           %h3.ListHeading アーカイバ
-        .ItemLists
-          - @sold_items.each do |item|
-            = render partial: "item", locals: { item: item }
+      .ItemLists
+        - @sold_items.each do |item|
+          = render partial: "item", locals: { item: item }
 = render "users/advertising_&_footer"
