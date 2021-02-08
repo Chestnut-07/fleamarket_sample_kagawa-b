@@ -1,0 +1,39 @@
+= render "users/top_header"
+.buymain
+  .buymain-block
+    .buymain-inner
+      .buymain-title
+        %h2 購入内容の確認
+      .buymain-lists
+        .buymain-lists-block
+          .buymain-lists-left
+            =image_tag 'dami.png'
+            %p カード
+          .buymain-lists-right
+            %p.p-left 送料別(税込)
+            %p.p-right ￥500
+      .buymain-payment
+        .buymain-payment-block
+          .buymain-payment-left
+            %p 支払い金額
+          .buymain-payment-right
+            %p ￥500
+      .buymain-method
+        %h2 支払い方法
+        .buymain-method-block
+          %p ************4242
+          %p 有効期限 03/21
+          =image_tag 'https://upload.wikimedia.org/wikipedia/commons/5/53/Visa_2014_logo_detail.svg'  
+      .buymain-address
+        %h2 配送先
+        .buymain-address-block
+          .buymain-address-left
+            %p 〒760-0019
+            %p 香川県 高松市 サンポート
+            %p かきくけ さしす
+          .buymain-address-right
+            %p 変更する >
+      .buymain-perchase
+        =form_with local: true do |f|
+          =f.submit '購入する'
+= render "users/advertising_&_footer"

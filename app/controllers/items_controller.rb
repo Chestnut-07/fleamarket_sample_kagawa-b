@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
     @sold_items = Item.where(trading_status: 2).order("created_at desc").limit(10)
 
   end
+  def perchase_confirmation
+  end
   
   def new
   end
