@@ -103,7 +103,7 @@
               .ItemText
                 %ul
                   %li 
-                    = @item.price
+                    = number_with_delimiter(@item.price, delimiter: ',')
                     円
                   %li
                     = icon("fa", "star")
