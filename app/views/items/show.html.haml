@@ -28,7 +28,9 @@
           カテゴリー
         .items__show--info-category_real.c
           .text
-            衣類
+            = @item.category.root[:name]
+            = @item.category.parent[:name]
+            = @item.category[:name]
       .items__show--info-condition.b
         .items__show--info-condition_type.a
           商品の状態
