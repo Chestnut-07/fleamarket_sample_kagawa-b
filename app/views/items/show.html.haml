@@ -5,7 +5,7 @@
     .items__show--image
       = image_tag @item.item_image.image.url
     .items__show--price
-      = @item.price
+      = "¥#{@item.price}"
     .items__show--tax
       = @item.shipping_fee_payer[:name]
     .items__show--btn
