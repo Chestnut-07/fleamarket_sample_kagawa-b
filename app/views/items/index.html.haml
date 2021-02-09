@@ -94,12 +94,13 @@
           = render partial: "item", locals: { item: item }
   %section.ItemIndexContainer
     %h2.ItemIndexHeading
-      ピックアップブランド
+      ピックアップ
     .IndexPanel
       .IndexCategory
         = link_to root_path do
-          %h3.ListHeading アーカイバ
+          %h3.ListHeading 
+            = @pickup_items[1].category.name
       .ItemLists
-        - @sold_items.each do |item|
+        - @pickup_items.each do |item|
           = render partial: "item", locals: { item: item }
 = render "users/advertising_&_footer"
