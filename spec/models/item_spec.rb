@@ -21,6 +21,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, introduction: "a" * 1001)).to be_invalid
       end
 
+      it "is invalid with a price 300 under" do
+        expect(build(:item, price: 299)).to be_invalid
+      end
+
     end
   end
 end
