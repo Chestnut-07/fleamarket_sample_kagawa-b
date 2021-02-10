@@ -20,5 +20,6 @@ class Item < ApplicationRecord
     validates :shipping_fee_payer_id
     validates :prefecture_id
     validates :preparation_day_id
+    validates :trading_status
   end
 end
