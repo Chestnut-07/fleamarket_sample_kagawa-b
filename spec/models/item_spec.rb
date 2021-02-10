@@ -41,6 +41,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, trading_status: nil)).to be_invalid
       end
 
+      it "is invalid without a introduction" do
+        expect(build(:item, introduction: nil)).to be_invalid
+      end
+
     end
   end
 end
