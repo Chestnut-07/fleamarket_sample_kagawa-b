@@ -16,6 +16,11 @@ RSpec.describe Item, type: :model do
       it "is invalid with a name length 40 over" do
         expect(build(:item, name: "a" * 41)).to be_invalid
       end
+
+      it "is invalid with a introduction 1000 over" do
+        expect(build(:item, introduction: "a" * 1001)).to be_invalid
+      end
+
     end
   end
 end
