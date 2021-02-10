@@ -37,6 +37,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, price: nil)).to be_invalid
       end
 
+      it "is invalid without a trading_status" do
+        expect(build(:item, trading_status: nil)).to be_invalid
+      end
+
     end
   end
 end
