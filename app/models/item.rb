@@ -19,5 +19,6 @@ class Item < ApplicationRecord
     validates :condition_id
     validates :shipping_fee_payer_id
     validates :prefecture_id
+    validates :preparation_day_id
   end
 end
