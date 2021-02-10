@@ -18,5 +18,6 @@ class Item < ApplicationRecord
     validates :category_id
     validates :condition_id
     validates :shipping_fee_payer_id
+    validates :prefecture_id
   end
 end
