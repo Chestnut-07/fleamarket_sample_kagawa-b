@@ -90,129 +90,17 @@
         = link_to root_path do
           %h3.ListHeading 新規投稿商品
       .ItemLists
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-              .SoldMark
-                %span.SoldMark__heading
-                  SOLD
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-              .SoldMark
-                %span.SoldMark__heading
-                  SOLD
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-              .SoldMark
-                %span.SoldMark__heading
-                  SOLD
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-              .SoldMark
-                %span.SoldMark__heading
-                  SOLD
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-              .SoldMark
-                %span.SoldMark__heading
-                  SOLD
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-              .SoldMark
-                %span.SoldMark__heading
-                  SOLD
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
-
+        - @new_items.each do |item|
+          = render partial: "item", locals: { item: item }
   %section.ItemIndexContainer
     %h2.ItemIndexHeading
-      ピックアップブランド
+      ピックアップカテゴリー
     .IndexPanel
       .IndexCategory
         = link_to root_path do
-          %h3.ListHeading アーカイバ
+          %h3.ListHeading 
+            = @pickup_items[1].category.name
       .ItemLists
-        .ItemList
-          = link_to "#" do
-            %figure.ItemList__image
-              = image_tag "material/icon/icon-02.png"
-            .ItemList__info
-              %h3.ItemName
-                名前:namenamenamenamenamenamename
-              .ItemText
-                %ul
-                  %li 1,000円
-                  %li
-                    = icon("fa", "star")
-                    0
-                %p （税込）
+        - @pickup_items.each do |item|
+          = render partial: "item", locals: { item: item }
 = render "users/advertising_&_footer"
