@@ -100,7 +100,7 @@
               必須
           %span.FormItemPanel__Doller
             ¥
-          = f.number_field :price, id: "Price",class: "FormItemPanel__Price", placeholder: "0", required: true, min: "300"
+          = f.number_field :price, class: "FormItemPanel__Price", placeholder: "0", required: true, min: "300",max: "9999999"
         .FormItemPanel__Sellprice
           %p.FormItemPanel__Sellbox
             販売手数料(10%)
