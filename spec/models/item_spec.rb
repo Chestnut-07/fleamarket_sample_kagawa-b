@@ -7,6 +7,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item)).to be_valid
       end
 
+      it "is valid without a buyer" do
+        expect(build(:item, buyer: nil)).to be_valid
+      end
+    end
     end
   end
 end
