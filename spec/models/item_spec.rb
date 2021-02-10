@@ -29,6 +29,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, price: 10000000)).to be_invalid
       end
 
+      it "is invalid without a name" do
+        expect(build(:item, name: nil)).to be_invalid
+      end
+
     end
   end
 end
