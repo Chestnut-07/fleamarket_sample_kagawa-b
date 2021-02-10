@@ -11,6 +11,11 @@ RSpec.describe Item, type: :model do
         expect(build(:item, buyer: nil)).to be_valid
       end
     end
+
+    context 'can not save' do
+      it "is invalid with a name length 40 over" do
+        expect(build(:item, name: "a" * 41)).to be_invalid
+      end
     end
   end
 end
