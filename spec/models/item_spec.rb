@@ -49,6 +49,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, condition_id: nil)).to be_invalid
       end
 
+      it "is invalid without a shipping_fee_payer_id" do
+        expect(build(:item, shipping_fee_payer_id: nil)).to be_invalid
+      end
+
     end
   end
 end
