@@ -11,7 +11,13 @@ FactoryBot.define do
     seller {FactoryBot.create(:user)}
     buyer {FactoryBot.create(:user)}
     category {FactoryBot.create(:category)}
+    after(:build) do |built_item|
+      built_item.item_image = FactoryBot.build(:item_image, item:built_item)
+    end
   end
 
+  factory :item_image do
+    image { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test_image.jpg'), 'spec/factories/test_image.jpg')}
+  end  
 
 end
