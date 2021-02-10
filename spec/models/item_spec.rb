@@ -61,6 +61,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, preparation_day_id: nil)).to be_invalid
       end
 
+      it "is invalid without a seller" do
+        expect(build(:item, seller: nil)).to be_invalid
+      end
+
     end
   end
 end
