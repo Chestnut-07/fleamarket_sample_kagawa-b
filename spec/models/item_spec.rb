@@ -25,6 +25,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, price: 299)).to be_invalid
       end
 
+      it "is invalid with a price 9999999 over" do
+        expect(build(:item, price: 10000000)).to be_invalid
+      end
+
     end
   end
 end
