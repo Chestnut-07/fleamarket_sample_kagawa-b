@@ -17,5 +17,6 @@ class Item < ApplicationRecord
     validates :item_image
     validates :category_id
     validates :condition_id
+    validates :shipping_fee_payer_id
   end
 end
