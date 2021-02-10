@@ -57,6 +57,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, prefecture_id: nil)).to be_invalid
       end
 
+      it "is invalid without a preparation_day_id" do
+        expect(build(:item, preparation_day_id: nil)).to be_invalid
+      end
+
     end
   end
 end
