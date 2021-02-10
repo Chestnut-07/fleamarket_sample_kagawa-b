@@ -16,5 +16,6 @@ class Item < ApplicationRecord
     validates :seller_id
     validates :item_image
     validates :category_id
+    validates :condition_id
   end
 end
