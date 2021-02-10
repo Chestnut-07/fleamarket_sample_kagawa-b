@@ -1,5 +1,5 @@
 $(function() {
-  $('#Price').on("change", function(){
+  $('#item_price').on("change", function(){
     let countNum = $(this).val();
     let fee = Math.floor(countNum * 0.1);
     let profit = countNum - fee;
