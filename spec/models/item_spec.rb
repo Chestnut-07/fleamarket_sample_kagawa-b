@@ -65,6 +65,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, seller: nil)).to be_invalid
       end
 
+      it "is invalid without a category" do
+        expect(build(:item, category: nil)).to be_invalid
+      end
+
     end
   end
 end
