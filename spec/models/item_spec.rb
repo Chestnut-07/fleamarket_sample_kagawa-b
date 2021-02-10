@@ -69,6 +69,10 @@ RSpec.describe Item, type: :model do
         expect(build(:item, category: nil)).to be_invalid
       end
 
+      it "is truthy without a item_image" do
+        expect(build(:item, item_image: nil)).to be_truthy
+      end
+
     end
   end
 end
