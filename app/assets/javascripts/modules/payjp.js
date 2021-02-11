@@ -8,5 +8,16 @@ window.addEventListener("load", function(){
       exp_month: document.getElementById("exp_month_form").value,
       exp_year: document.getElementById("exp_year_form").value
     };
+    Payjp.createToken(card, function(status, response) {
+      if (status === 200) {
+        $("#card_token_submit").append(
+          $('<input type="hidden" name="card_token">').val(response.id)
+        );
+        // console.log('card_token');
+        // handle token object and send back to your server. You can get token id from "response.id".
+      } else {
+        // handle error like displaying error message.
+      };
+    });  
   });
 });
