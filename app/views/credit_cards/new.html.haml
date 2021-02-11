@@ -5,7 +5,7 @@
   %main.CardNewContainer
     %section.ResistCard
       %h2 支払い方法
-    = form_with model: nil, local: true do |f|
+    = form_with model: nil, id: "card_form", local: true do |f|
       .CardFormPanel
         .CardInputField
           .CardInputField__heading
