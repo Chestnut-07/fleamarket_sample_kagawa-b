@@ -10,13 +10,14 @@ window.addEventListener("load", function(){
     };
     Payjp.createToken(card, function(status, response) {
       if (status === 200) {
+        $("#card_number_form").removeAttr("name");
+        $("#cvc_form").removeAttr("name");
+        $("#exp_month_form").removeAttr("name");
+        $("#exp_year_form").removeAttr("name");
         $("#card_token_submit").append(
           $('<input type="hidden" name="card_token">').val(response.id)
         );
-        // console.log('card_token');
-        // handle token object and send back to your server. You can get token id from "response.id".
       } else {
-        // handle error like displaying error message.
       };
     });  
   });
