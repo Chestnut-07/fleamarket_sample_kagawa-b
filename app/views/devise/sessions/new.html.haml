@@ -1,24 +1,17 @@
-.content-sign-up
-  .header
-  .main
-    .content
-      .content-message
-        %p アカウントをお持ちでない方はこちら
-        =link_to '新規会員登録', 'new_user_registration_path',class:"content-logo" 
-      .content-list
-        =link_to '#',class:"content-btn_g"  do
-          =icon('fab', 'google', class:"content-icon")
-          %span Googleでログイン
-        =link_to  '#',class:"content-btn_f" do
-          = icon('fab', 'facebook-square', class: "content-icon")
-          %span Facebookでログイン
-        =link_to '#',class:"content-btn_a" do
-          =icon('fab', 'apple', class:"content-icon")
-          %span Appleでログイン
-        =form_with html:{class:"content-foot"} do |f|
-          =f.text_field :hoge ,class:"content-form",placeholder: "メールアドレス"
-          =f.password_field :hoge,class:"content-form",placeholder: "パスワード"
-          =f.submit :hoge,class:"btn",value: "ログイン"
-        =link_to 'パスワードをお忘れの方', '#',class:"note"
-
-  .footer
+%h2 Log in
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password, autocomplete: "current-password"
+  - if devise_mapping.rememberable?
+    .field
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .actions
+    = f.submit "Log in"
+= render "devise/shared/links"
