@@ -16,7 +16,12 @@ class CreditCardsController < ApplicationController
 
   def create
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    customer = Payjp::Customer.create(
+      card: params["card_token"],
+      metadata: {user_id: current_user.id}
+    )
     @credit_card = CreditCard.new(user: current_user, customer_token: customer.id, card_token: customer.default_card)
+    @credit_card.save
   end
 
 end

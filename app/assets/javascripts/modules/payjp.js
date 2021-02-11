@@ -17,6 +17,7 @@ window.addEventListener("load", function(){
         $("#card_token_submit").append(
           $('<input type="hidden" name="card_token">').val(response.id)
         );
+        $("#card_form")[0].submit();
       } else {
       };
     });  
