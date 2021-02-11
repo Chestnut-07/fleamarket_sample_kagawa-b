@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
       number: document.getElementById("card_number_form").value,
       cvc: document.getElementById("cvc_form").value,
       exp_month: document.getElementById("exp_month_form").value,
-      exp_year: document.getElementById("exp_year_form").value
+      exp_year: "20" + document.getElementById("exp_year_form").value
     };
     Payjp.createToken(card, function(status, response) {
       if (status === 200) {

@@ -27,7 +27,7 @@
           .CardInputField__form
             = f.select :exp_month, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], { include_blank: "---" }, { id: "exp_month_form", class: "ExpDate", required: true }
             %span.ApartMonth 月
-            = f.select :exp_year, @exp_year, { include_blank: "---" }, { id: "exp_year_form", class: "ExpDate", required: true }
+            = f.select :exp_year, @exp_year, { include_blank: "---" }, { id: "exp_year_form", type: "text", class: "ExpDate", required: true }
             %span.ApartYear 年
         .CardInputField
           .CardInputField__heading
