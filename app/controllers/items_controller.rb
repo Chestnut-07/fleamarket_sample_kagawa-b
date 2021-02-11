@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new,:create]
   def index
     @new_items = Item.all.order("created_at desc").limit(10)
     random_category = Item.all.shuffle.take(1)[0][:category_id]
