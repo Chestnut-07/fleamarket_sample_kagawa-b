@@ -38,7 +38,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -84,3 +83,7 @@ gem 'mini_magick'
 gem 'payjp'
 
 gem 'jquery-rails'
+
+gem 'dotenv-rails'
+
+gem 'gon'
