@@ -43,6 +43,6 @@
           .buymain-address-right
             %p 変更する >
       .buymain-perchase
-        =form_with local: true do |f|
-          =f.submit '購入する'
+        = link_to pay_items_path(@item.id), class: "DefaultBtn BlueBtn", method: :post do
+          購入する
 = render "users/advertising_&_footer"
