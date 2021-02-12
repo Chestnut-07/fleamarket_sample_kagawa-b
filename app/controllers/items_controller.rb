@@ -19,16 +19,16 @@ class ItemsController < ApplicationController
     end
   end
 
-  def purchase
+  def pay
     @item = Item.find(params[:id])
-    card = CreditCard.where(user_id: current_user.id)
-    if card.blank?
+    @card = CreditCard.where(user_id: current_user.id).first
+    if @card.blank?
       redirect_to new_credit_card_path
     else
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      charge = Payjp::Charge.create(
+      Payjp::Charge.create(
         amount: @item.price,
-        customer: card.customer_token,
+        customer: @card.customer_token,
         currency: 'jpy',
       )
       if @item.update(trading_status: 2, buyer_id: current_user.id)
