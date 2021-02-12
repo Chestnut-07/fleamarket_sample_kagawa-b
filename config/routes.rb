@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :show]do
     collection do
       get "purchase_confirmation/:id", to: "items#purchase_confirmation", as: "purchase_confirmation"
-      post "purchase/:id", to: "items#purchase", as: "purchase"
+      post "pay/:id", to: "items#pay", as: "pay"
     end
   end 
 
