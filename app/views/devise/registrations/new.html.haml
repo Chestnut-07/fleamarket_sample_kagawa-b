@@ -1,9 +1,10 @@
 .content-sign-up
-  .header
+  .header_registration
   .main
     .section
       %h2.main-logo 新規ユーザー登録
       = form_with model: @user, url: user_registration_path, class: "main-form", local: true do |f| 
+        = render "devise/shared/error_messages", resource: resource
         .name
           %label.name-user ニックネーム
           %span.name-content 必須
@@ -19,7 +20,7 @@
         .name
           %label.name-user パスワード
           %span.name-content 必須
-          =f.password_field :password,class:"name-form",placeholder: "7文字以上の半角英数字"
+          =f.password_field :password_confirmation,class:"name-form",placeholder: "7文字以上の半角英数字"
         .name
           %h2.main-logo 本人確認
           %p.logo 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客様に公開されることはありません。

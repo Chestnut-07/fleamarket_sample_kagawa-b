@@ -15,10 +15,9 @@
         =link_to '#',class:"content-btn_a" do
           =icon('fab', 'apple', class:"content-icon")
           %span Appleでログイン
-        =form_with html:{class:"content-foot"} do |f|
-          =f.text_field :hoge ,class:"content-form",placeholder: "メールアドレス"
-          =f.password_field :hoge,class:"content-form",placeholder: "パスワード"
-          =f.submit :hoge,class:"btn",value: "ログイン"
+        =form_with model: @user, url: user_session_path, class: "content-foot", local: true do |f| 
+          =f.email_field :email ,class:"content-form",placeholder: "メールアドレス"
+          =f.password_field :password,class:"content-form",placeholder: "パスワード"
+          =f.submit class:"btn",value: "ログイン"
         =link_to 'パスワードをお忘れの方', '#',class:"note"
-
   .footer

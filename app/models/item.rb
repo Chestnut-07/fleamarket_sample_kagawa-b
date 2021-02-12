@@ -9,4 +9,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :delivery
+
+  
 end

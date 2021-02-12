@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :show]do
     collection do
     get "perchase_confirmation"
+    get 'search'
     end
   end 
 
