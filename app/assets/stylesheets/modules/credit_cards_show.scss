@@ -17,6 +17,13 @@
     &__section {
       padding: 32px 0px;
       font-size: 14px;
+      .ResistCard {
+        &__info {
+          .CardLogo {
+            max-width: 48px;
+          }
+        }
+      }
     }
     .RJustify {
       text-align: right;
