@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
+    @item = Item.find(params[:id])
   end
 
   def purchase
