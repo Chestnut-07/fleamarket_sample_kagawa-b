@@ -37,7 +37,11 @@ class CreditCardsController < ApplicationController
 
   def destroy
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    
+    customer = Payjp::Customer.retrieve(@card.customer_token)
+    customer.delete
+    if @card.destroy
+      redirect_to credit_cards_path
+    end
   end
 
   private

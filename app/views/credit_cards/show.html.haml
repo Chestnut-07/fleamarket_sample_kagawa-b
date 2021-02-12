@@ -19,7 +19,7 @@
                   有効期限
                   = @card_exp
                 = image_tag @card_logo, class: 'CardLogo'
-              = link_to "#", class: "CardDeleteBtn" do
+              = link_to credit_card_path(current_user), class: "CardDeleteBtn", method: :delete do
                 削除する
           %section.Method__section.RJustify
             = link_to "#" do
