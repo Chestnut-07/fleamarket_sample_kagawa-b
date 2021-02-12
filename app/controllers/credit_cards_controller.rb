@@ -29,6 +29,7 @@ class CreditCardsController < ApplicationController
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     customer = Payjp::Customer.retrieve(card.customer_token)
     @card_info = customer.cards.retrieve(card.card_token)
+    @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
   end
 
 end
