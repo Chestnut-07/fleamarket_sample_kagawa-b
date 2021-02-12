@@ -3,10 +3,11 @@ class Destination < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :user
 
-  validates :post_code,                presence: true
-  validates :prefecture_id,            presence: true
-  validates :city,                     presence: true
-  validates :house_number,             presence: true
-          
+  with_options presence: true do
+    validates :post_code
+    validates :prefecture_id
+    validates :city
+    validates :house_number
+  end
            
 end
