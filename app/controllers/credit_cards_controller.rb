@@ -25,7 +25,10 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    
+    card = CreditCard.where(user_id: current_user.id).first
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    customer = Payjp::Customer.retrieve(card.customer_token)
+    @card_info = customer.cards.retrieve(card.card_token)
   end
 
 end
