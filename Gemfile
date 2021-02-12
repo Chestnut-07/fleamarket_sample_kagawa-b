@@ -87,3 +87,5 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 
 gem 'gon'
+
+gem "toastr-rails"
