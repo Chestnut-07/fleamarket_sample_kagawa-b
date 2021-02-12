@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def purchase
     @item = Item.find(params[:id])
+    card = current_user.credit_card
     
   end
   
