@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
         currency: 'jpy',
       )
       if @item.update(trading_status: 2, buyer_id: current_user.id)
-        redirect_to item_path(@item.id), notice: "#{@item.name}を購入しました。"
+        redirect_to root_path, notice: "#{@item.name}を購入しました。"
       else
         redirect_to item_path(@item.id), notice: "#{@item.name}を購入できませんでした。"
       end
