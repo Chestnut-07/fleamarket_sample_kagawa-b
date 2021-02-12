@@ -22,8 +22,8 @@ class ItemsController < ApplicationController
         redirect_to item_path(@item.id), notice: "#{@item.name}を購入しました。"
       else
         redirect_to item_path(@item.id), notice: "#{@item.name}を購入できませんでした。"
+      end
     end
-
   end
 
   def new
