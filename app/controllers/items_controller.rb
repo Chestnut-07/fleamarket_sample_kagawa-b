@@ -9,6 +9,8 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    @item = Item.find(params[:id])
+    
   end
   
   def new
