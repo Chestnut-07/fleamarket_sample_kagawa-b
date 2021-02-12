@@ -24,15 +24,21 @@ class CreditCardsController < ApplicationController
       metadata: {user_id: current_user.id}
     )
     @credit_card = CreditCard.new(user: current_user, customer_token: customer.id, card_token: customer.default_card)
-    @credit_card.save
+    if @credit_card.save
+      redirect_to credit_card_path(current_user)
+    end
   end
 
   def show
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    customer = Payjp::Customer.retrieve(@card.customer_token)
-    @card_info = customer.cards.retrieve(@card.card_token)
-    @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
-    @card_logo = "material/pict/#{@card_info.brand}.svg"
+    if @card.blank?
+      redirect_to action: "index"
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_token)
+      @card_info = customer.cards.retrieve(@card.card_token)
+      @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
+      @card_logo = "material/pict/#{@card_info.brand}.svg"
+    end
   end
 
   def destroy
