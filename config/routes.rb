@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :credit_cards, only: [:index, :new, :create, :show, :destroy]
   resources :items, only: [:index, :new, :show]do
     collection do
+    post "purchase/:id", to: "items#purchase", as: "purchase"
     get "perchase_confirmation"
     end
   end 
