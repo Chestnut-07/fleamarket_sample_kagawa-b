@@ -5,10 +5,8 @@ class ItemsController < ApplicationController
     @pickup_items = Item.where(category: random_category, trading_status: 1).shuffle.take(10)
 
   end
-  def perchase_confirmation
-  end
 
-  def purchase
+  def perchase_confirmation
     @item = Item.find(params[:id])
     card = CreditCard.where(user_id: current_user.id)
     if card.blank?
@@ -25,8 +23,9 @@ class ItemsController < ApplicationController
       else
         redirect_to item_path(@item.id), notice: "#{@item.name}を購入できませんでした。"
     end
+
   end
-  
+
   def new
   end
 
