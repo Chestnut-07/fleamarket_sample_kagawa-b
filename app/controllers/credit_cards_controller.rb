@@ -30,6 +30,7 @@ class CreditCardsController < ApplicationController
     customer = Payjp::Customer.retrieve(@card.customer_token)
     @card_info = customer.cards.retrieve(@card.card_token)
     @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
+    @card_logo = "material/pict/#{@card_info.brand}.svg"
   end
 
   def destroy

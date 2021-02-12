@@ -18,8 +18,7 @@
                 %p
                   有効期限
                   = @card_exp
-                - card_logo_root = "material/pict/#{@card_info.brand}.svg"
-                = image_tag card_logo_root, class: 'CardLogo'
+                = image_tag @card_logo, class: 'CardLogo'
               = link_to "#", class: "CardDeleteBtn" do
                 削除する
           %section.Method__section.RJustify
