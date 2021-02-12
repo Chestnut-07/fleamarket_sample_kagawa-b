@@ -25,9 +25,9 @@ class CreditCardsController < ApplicationController
     )
     @credit_card = CreditCard.new(user: current_user, customer_token: customer.id, card_token: customer.default_card)
     if @credit_card.save
-      redirect_to credit_card_path(current_user)
+      redirect_to credit_card_path(current_user), notice: "カード情報が登録されました。"
     else
-      redirect_to new_credit_card_path
+      redirect_to new_credit_card_path, alert: "カード情報が登録できませんでした。"
     end
   end
 
@@ -48,9 +48,9 @@ class CreditCardsController < ApplicationController
     customer = Payjp::Customer.retrieve(@card.customer_token)
     customer.delete
     if @card.destroy
-      redirect_to credit_cards_path
+      redirect_to credit_cards_path, notice: "カード情報が削除されました。"
     else
-      redirect_to credit_cards_path
+      redirect_to credit_cards_path, alert: "カード情報を削除できませんでした。"
     end
   end
 
