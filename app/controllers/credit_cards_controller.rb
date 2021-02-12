@@ -24,4 +24,8 @@ class CreditCardsController < ApplicationController
     @credit_card.save
   end
 
+  def show
+    
+  end
+
 end
