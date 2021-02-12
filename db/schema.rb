@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_083702) do
+ActiveRecord::Schema.define(version: 2021_02_05_060849) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2021_02_04_083702) do
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
-    t.integer "prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
     t.string "phone_number"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_destinations_on_user_id"
   end
 
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(version: 2021_02_04_083702) do
     t.integer "trading_status", null: false
     t.text "introduction", null: false
     t.bigint "category_id", null: false
-    t.integer "condition_id", null: false
+    t.integer "item_condition", null: false
     t.integer "shipping_fee_payer_id", null: false
+    t.string "delivery_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "preparation_day_id", null: false
     t.integer "price", null: false

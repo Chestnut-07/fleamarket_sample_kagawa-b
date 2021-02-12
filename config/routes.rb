@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-
-  devise_for :users
-
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+    devise_scope :user do
+      get 'users/index', to: 'users/registrations#index'
+      get 'users/destroy', to: 'users/sessions#destroy'
+  end 
   root 'items#index'
 
   resources :users, only: [:show]
@@ -10,6 +15,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :show, :create] do
     collection do
     get "perchase_confirmation"
+    get 'search'
     end
   end 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
