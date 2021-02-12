@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def purchase
     @item = Item.find(params[:id])
     card = current_user.credit_card
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     
   end
   
