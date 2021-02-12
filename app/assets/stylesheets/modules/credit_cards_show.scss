@@ -18,7 +18,11 @@
       padding: 32px 0px;
       font-size: 14px;
       .ResistCard {
+        display: flex;
+        align-items: center;
         &__info {
+          margin: 0 16px;
+          flex: 1 1 0%;
           .CardLogo {
             max-width: 48px;
           }
