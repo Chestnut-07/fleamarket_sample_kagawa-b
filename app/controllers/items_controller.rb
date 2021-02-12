@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
 
   def purchase
     @item = Item.find(params[:id])
-    card = current_user.credit_card
+    card = CreditCard.where(user_id: current_user.id)
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     charge = Payjp::Charge.create(
       amount: @item.price,
