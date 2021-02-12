@@ -8,6 +8,15 @@ class ItemsController < ApplicationController
 
   def purchase_confirmation
     @item = Item.find(params[:id])
+    @card = CreditCard.where(user_id: current_user.id).first
+    if @card.blank?
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_token)
+      @card_info = customer.cards.retrieve(@card.card_token)
+      @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
+      @card_logo = "material/pict/#{@card_info.brand}.svg"
+    end
   end
 
   def purchase
