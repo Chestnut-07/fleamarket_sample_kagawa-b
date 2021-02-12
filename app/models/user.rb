@@ -17,10 +17,7 @@ class User < ApplicationRecord
     validates :birth_date
     validates :nickname,                length: {maximum: 20}
     validates :email,                   uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-    with_options length: {minimum: 7, maximum: 128} do
-      validates :password
-      validates :password_confirmation
-    end
+    validates :password,                length: {minimum: 7, maximum: 128} 
     with_options format: { with: VALID_ZENKAKU_REGEX } do
       validates :family_name
       validates :first_name
