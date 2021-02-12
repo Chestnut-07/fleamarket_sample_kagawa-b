@@ -14,12 +14,18 @@ class ItemsController < ApplicationController
     if card.blank?
       redirect_to new_credit_card_path
     else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       charge = Payjp::Charge.create(
         amount: @item.price,
         customer: card.customer_token,
         currency: 'jpy',
       )
-    end  end
+      if @item.update(trading_status: 2, buyer_id: current_user.id)
+        redirect_to item_path(@item.id), notice: "#{@item.name}を購入しました。"
+      else
+        redirect_to item_path(@item.id), notice: "#{@item.name}を購入できませんでした。"
+    end
+  end
   
   def new
   end
