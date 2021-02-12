@@ -12,7 +12,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     card = current_user.credit_card
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      customer: card.customer_token,
+      currency: 'jpy',
+    )
   end
   
   def new
