@@ -1,5 +1,6 @@
 class CreditCardsController < ApplicationController
   before_action :prepare_card, only: [:show, :destroy]
+  before_action :redirect_show, only: [:index, :new] 
   
   require "payjp"
 
@@ -27,6 +28,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     customer = Payjp::Customer.retrieve(@card.customer_token)
     @card_info = customer.cards.retrieve(@card.card_token)
     @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
@@ -34,12 +36,17 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     
   end
 
   private
   def prepare_card
     @card = CreditCard.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+  end
+
+  def redirect_show
+    credit_card = CreditCard.where(user_id: current_user.id)
+    redirect_to credit_card_path(current_user) if credit_card.exists?
   end
 end
