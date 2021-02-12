@@ -7,6 +7,9 @@ class ItemsController < ApplicationController
   end
   def perchase_confirmation
   end
+
+  def purchase
+  end
   
   def new
   end
