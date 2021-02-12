@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_083702) do
     t.integer "trading_status", null: false
     t.text "introduction", null: false
     t.bigint "category_id", null: false
-    t.integer "item_condition", null: false
+    t.integer "condition_id", null: false
     t.integer "shipping_fee_payer_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "preparation_day_id", null: false
