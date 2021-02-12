@@ -7,6 +7,9 @@ class ItemsController < ApplicationController
   end
 
   def perchase_confirmation
+  end
+
+  def perchase
     @item = Item.find(params[:id])
     card = CreditCard.where(user_id: current_user.id)
     if card.blank?
