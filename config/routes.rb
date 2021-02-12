@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :users, only: [:show]
-  resources :credit_cards, only: [:index, :new, :create, :show]
+  resources :credit_cards, only: [:index, :new, :create, :show, :destroy]
   resources :items, only: [:index, :new, :show]do
     collection do
     get "perchase_confirmation"

@@ -32,4 +32,8 @@ class CreditCardsController < ApplicationController
     @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
   end
 
+  def destroy
+    
+  end
+
 end
