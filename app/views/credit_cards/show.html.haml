@@ -9,7 +9,14 @@
             支払い方法
         .Method
           %section.Method__section
-            
+            .ResistCard
+              = icon("fas", "check-circle")
+              .ResistCard__info
+                %p ************4242
+                %p 有効期限
+                = image_tag 'material/pict/visa_logo.svg', class: 'CardLogo'
+              = link_to "#", class: "CardDeleteBtn" do
+                削除する
           %section.Method__section.RJustify
             = link_to "#" do
               %span 支払い方法について
