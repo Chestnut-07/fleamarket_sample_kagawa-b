@@ -20,8 +20,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-
-
   def get_categories
     current_category = Category.find(params[:category_id])
     @children = current_category.children
@@ -41,6 +39,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image]).merge(seller_id: current_user.id, trading_status: 1)
   end
-
 
 end
