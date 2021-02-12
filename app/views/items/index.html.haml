@@ -99,7 +99,7 @@
       .IndexCategory
         = link_to root_path do
           %h3.ListHeading 
-            = @pickup_items[1].category.name
+            = @pickup_items[0].category.root.name
       .ItemLists
         - @pickup_items.each do |item|
           = render partial: "item", locals: { item: item }

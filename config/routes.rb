@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :credit_cards, only: [:index, :new]
-  resources :items, only: [:index, :new, :show]do
+  get 'api/items/categories', to: 'items#get_categories'
+  resources :items, only: [:index, :new, :show, :create] do
     collection do
     get "perchase_confirmation"
     end
   end 
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
