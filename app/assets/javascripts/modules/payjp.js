@@ -19,6 +19,7 @@ window.addEventListener("load", function(){
         );
         $("#card_form")[0].submit();
       } else {
+        alert("カード情報が正しくありません。");
       };
     });  
   });
