@@ -102,8 +102,7 @@
       .IndexCategory
         = link_to root_path do
           %h3.ListHeading 
-            - if @pickup_items.blank?
-            - else
+            - unless @pickup_items.blank?
               = @pickup_items[0].category.root.name
       .ItemLists
         - if @pickup_items.blank?

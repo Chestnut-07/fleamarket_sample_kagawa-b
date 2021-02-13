@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create]
   def index
     @items = Item.all
-    if @items.blank?
-    else
+    unless @items.blank?
       @new_items = Item.all.order("created_at desc").limit(10)
       random_category = Item.all.shuffle.take(1)[0][:category_id]
       @pickup_items = Item.where(category: random_category, trading_status: 1).shuffle.take(10)
@@ -13,8 +12,7 @@ class ItemsController < ApplicationController
   def purchase_confirmation
     @item = Item.find(params[:id])
     @card = CreditCard.where(user_id: current_user.id).first
-    if @card.blank?
-    else
+    unless @card.blank?
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_token)
       @card_info = customer.cards.retrieve(@card.card_token)
