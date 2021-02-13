@@ -32,8 +32,8 @@
               %span マイページ
         - else
           %li
-            = link_to new_user_session_path do
+            = link_to new_user_session_path, class: "LogInBtn" do
               ログイン
           %li
-            = link_to new_user_registration_path do
+            = link_to new_user_registration_path, class: "SignUpBtn" do
               新規会員登録
