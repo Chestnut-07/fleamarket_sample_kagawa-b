@@ -3,7 +3,7 @@
     %h1
       = link_to image_tag("material/logo/logo.png", alt: "サンプル画像"), "/"
   %main.SellNewContainer
-    = form_with model: nil, html: {class: "RegistrationForm"}, local: true do |f|
+    = form_with model: @item, html: {class: "RegistrationForm"}, local: true do |f|
       .FormItemPanel
         %label
           出品画像
@@ -14,12 +14,13 @@
         .FormItemPanel__Image
           .FormItemPanel__Imagepartition
           .FormItemPanel__Imagebox
-            = f.label :image, class: "FormItemPanel__Inputimage" do
-              = f.file_field :image, class: 'FormItemPanel__Hidden', required: true
-              .FormItemPanel__Cen
-                = icon("fa","camera", class:"FormItemPanel__Icon")
-                %p.FormItemPanel__Image-innerText
-                  クリックしてファイルをアップロード
+            = f.fields_for :item_image do |file|
+              = file.label :image, class: "FormItemPanel__Inputimage" do
+                = file.file_field :image, class: 'FormItemPanel__Hidden', required: true
+                .FormItemPanel__Cen
+                  = icon("fa","camera", class:"FormItemPanel__Icon")
+                  %p.FormItemPanel__Image-innerText
+                    クリックしてファイルをアップロード
       %hr.FormItemPanel__Separator
       .FormItemPanel
         .FormItemPanel__Contentbox
@@ -33,9 +34,9 @@
             商品の説明
           %span.FormItemPanel__Require
             必須
-          = f.text_area :introduction, placeholder: "商品の説明(1,000文字以内)\n(色、素材、重さ、定価、注意点など)\n\n例) 2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "7", required: true
+          = f.text_area :introduction, placeholder: "商品の説明(1,000文字以内)\n(色、素材、重さ、定価、注意点など)\n\n例) 2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "7", required: true, maxlength: "1000"
           .FormItemPanel__Strcount
-            %span
+            %span.counter
               0
               \/1000
 
@@ -43,18 +44,12 @@
       .FormItemPanel
         %p.FormItemPanel__Sub
           商品の詳細
-        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
+        .FormItemPanel__Contentbox.FormItemPanel__Notfirst.Category
           = f.label :category_id do
             カテゴリー名
           %span.FormItemPanel__Require
             必須
-          = f.select :category_id, [['レディース', "women"], ['メンズ', "men"], ['ベビー・キッズ', "baby_kid"], ['スマホ・タブレット', "phone_tablet"], ['ゲーム', "game"], ['おもちゃ・ホビーグッズ', "toy"], ['本・メディア', "book_media"], ['チケット', "ticket"], ['スポーツ・レジャー', "sport_leisure"]], { include_blank: '--選択してください--'}, { id: "categories", required: true}
-        .FormItemPanel__Contentbox.FormItemPanel__Notfirst
-          = f.label :brand do
-            ブランド
-          %span.FormItemPanel__Any
-            任意
-          = f.text_field :brand, placeholder: "例)HERMES"
+          = f.collection_select(:category_id, @category, :id, :name, { include_blank: '--選択してください--'}, { class: "categories", required: true})
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           = f.label :condition_id do
             商品の状態
@@ -78,7 +73,7 @@
             発送元の地域
           %span.FormItemPanel__Require
             必須
-          = f.collection_select(:item_prefecture_id, Prefecture.all, :id, :name, { include_blank: "--選択してください--" }, { id: "prefecture", required: "required"})
+          = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { include_blank: "--選択してください--" }, { id: "prefecture", required: "required"})
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           = f.label :preparation_day_id do
             発送までの日数
@@ -99,7 +94,7 @@
               必須
           %span.FormItemPanel__Doller
             ¥
-          = f.number_field :price, id: "Price",class: "FormItemPanel__Price", placeholder: "0", required: true
+          = f.number_field :price, class: "FormItemPanel__Price", placeholder: "0", required: true, min: "300",max: "9999999"
         .FormItemPanel__Sellprice
           %p.FormItemPanel__Sellbox
             販売手数料(10%)

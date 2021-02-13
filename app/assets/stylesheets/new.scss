@@ -13,7 +13,7 @@ $blue-green: #3CCACE;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
-.header {
+.header_registration {
   height: 200px;
 }
 
@@ -109,9 +109,9 @@ $blue-green: #3CCACE;
   border: 1px solid $teal-color;
   color: $white-color;
   padding: 20px;
-  margin-top: 50px;
   width: 500px;
   cursor: pointer;
+  margin:30px;
 }
 
 .footer {

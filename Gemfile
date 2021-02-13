@@ -38,6 +38,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails', '~> 4.0.2'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -89,3 +93,5 @@ gem 'dotenv-rails'
 gem 'gon'
 
 gem 'toastr-rails'
+
+gem 'fog-aws'
