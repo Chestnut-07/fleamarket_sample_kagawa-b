@@ -25,14 +25,18 @@
               = @item.price
       .buymain-method
         %h2 支払い方法
-        .buymain-method-block
-          %p<>
-            ************
-            = @card_info.last4
-          %p
-            有効期限
-            = @card_exp
-          =image_tag @card_logo
+        - if @card.blank?
+          = link_to new_credit_card_path, class: "buymain-method-newcard" do
+            登録してください
+        - else
+          .buymain-method-block
+            %p<>
+              ************
+              = @card_info.last4
+            %p
+              有効期限
+              = @card_exp
+            =image_tag @card_logo
       .buymain-address
         %h2 配送先
         .buymain-address-block
