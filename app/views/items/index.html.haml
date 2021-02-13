@@ -102,11 +102,11 @@
       .IndexCategory
         = link_to root_path do
           %h3.ListHeading 
-            - if @items.blank?
+            - if @pickup_items.blank?
             - else
               = @pickup_items[0].category.root.name
       .ItemLists
-        - if @items.blank?
+        - if @pickup_items.blank?
           %p まだ商品がありません
         - else 
           - @pickup_items.each do |item|
