@@ -31,9 +31,9 @@
               = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
               %span マイページ
         - else
-          %li
+          %li.RightList__item
             = link_to new_user_session_path, class: "LogInBtn" do
               ログイン
-          %li
+          %li.RightList__item
             = link_to new_user_registration_path, class: "SignUpBtn" do
               新規会員登録
