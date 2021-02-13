@@ -106,6 +106,9 @@
             - else
               = @pickup_items[0].category.root.name
       .ItemLists
-        - @pickup_items.each do |item|
-          = render partial: "item", locals: { item: item }
+        - if @items.blank?
+          %p まだ商品がありません
+        - else 
+          - @pickup_items.each do |item|
+            = render partial: "item", locals: { item: item }
 = render "users/advertising_&_footer"
