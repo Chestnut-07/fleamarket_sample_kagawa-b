@@ -1,6 +1,9 @@
 class CreditCard < ApplicationRecord
   belongs_to :user, optional: true
 
-  validates :customer_token, presence: true
-  validates :card_token, presence: true
+  with_options presence: true do
+    validates :user
+    validates :customer_token
+    validates :card_token
+  end
 end
