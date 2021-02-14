@@ -1,4 +1,7 @@
 = render "users/top_header"
+.breadcrumbs_logo
+  - breadcrumb :pay 
+  = breadcrumbs separator: " &rsaquo; ",class:"logo"
 %main.CardShow
   .BackBoard
     = render "users/side_bar"
