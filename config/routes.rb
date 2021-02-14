@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :credit_cards, only: [:index, :new]
-  resources :items, only: [:index, :new, :show]do
+  resources :items, only: [:index, :new, :show, :destroy]do
     collection do
     get "perchase_confirmation"
     end
