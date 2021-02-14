@@ -7,8 +7,8 @@ crumb :user do
   parent :root
 end
 
-crumb :New do
-  link"新規登録",new_user_registration_path
+crumb :item do
+  link"商品詳細一覧",item_path
   parent :root
 end
 
