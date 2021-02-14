@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :credit_cards, only: [:index, :new]
   get 'api/items/categories', to: 'items#get_categories'
-  resources :items, only: [:index, :new, :show, :create] do
+  resources :items, only: [:index, :new, :show, :create, :destroy] do
     collection do
     get "perchase_confirmation"
     get 'search'
