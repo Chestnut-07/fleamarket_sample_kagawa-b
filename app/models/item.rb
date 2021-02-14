@@ -24,4 +24,13 @@ class Item < ApplicationRecord
     validates :preparation_day_id
     validates :trading_status
   end
+
+
+  def self.search(search)
+    if search != ""
+      Items.where('name LIKE(?)', "%#{search}%")
+    else
+      Items.all
+    end
+  end
 end

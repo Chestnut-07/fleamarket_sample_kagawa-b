@@ -34,6 +34,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Items.search(params[:keyword])
+  end
+
   private
   
   def item_params
