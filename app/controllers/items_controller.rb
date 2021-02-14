@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create]
+  before_action :set_item, only: [:show, :edit, :update]
   def index
     @new_items = Item.all.order("created_at desc").limit(10)
     random_category = Item.all.shuffle.take(1)[0][:category_id]
@@ -46,6 +47,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
   
   def item_params
     params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image]).merge(seller_id: current_user.id, trading_status: 1)
