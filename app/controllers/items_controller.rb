@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new,:create]
+  before_action :authenticate_user!, only: [:new,:create, :purchase_confirmation]
   before_action :find_current_item, only: [:purchase_confirmation, :pay, :show]
 
   def index
@@ -12,9 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
-    if !user_signed_in?
-      redirect_to item_path(@item.id), alert: "ログインしてください。"
-    elsif current_user.id == @item.seller_id
+    if current_user.id == @item.seller_id
       redirect_to item_path(@item.id), alert: "自身で出品した商品は購入できません。"
     elsif @item.trading_status == 2
       redirect_to item_path(@item.id), alert: "この商品は売り切れです。"

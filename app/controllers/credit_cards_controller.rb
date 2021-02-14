@@ -1,4 +1,5 @@
 class CreditCardsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   before_action :prepare_card, only: [:show, :destroy]
   before_action :redirect_show, only: [:index] 
   
@@ -8,17 +9,13 @@ class CreditCardsController < ApplicationController
   end
 
   def new
-    if !user_signed_in?
-      redirect_to root_path, alert: "ログインしてください。"
-    else
-      redirect_show
-      gon.payjp_public_key = ENV["PAYJP_PUBLIC_KEY"]
-      @credit_card = CreditCard.new
-      @exp_year = []
-      11.times do |i|
-        today_year = Date.today.year % 100
-        @exp_year << today_year + i
-      end
+    redirect_show
+    gon.payjp_public_key = ENV["PAYJP_PUBLIC_KEY"]
+    @credit_card = CreditCard.new
+    @exp_year = []
+    11.times do |i|
+      today_year = Date.today.year % 100
+      @exp_year << today_year + i
     end
   end
 
