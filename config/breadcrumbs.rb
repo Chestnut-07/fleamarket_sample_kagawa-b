@@ -7,8 +7,8 @@ crumb :user do
   parent :root
 end
 
-crumb :item do
-  link"商品詳細一覧",item_path
+crumb :item do |item|
+  link"#{item.name}",item_path
   parent :root
 end
 
