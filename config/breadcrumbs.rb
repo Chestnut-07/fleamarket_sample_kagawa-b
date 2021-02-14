@@ -12,6 +12,10 @@ crumb :item do |item|
   parent :root
 end
 
+crumb :pay do
+  link"支払い方法",credit_cards_path
+  parent :root
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
