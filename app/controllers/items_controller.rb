@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create]
+  before_action :find_current_item, only: [:purchase_confirmation, :pay, :show]
+
   def index
     @items = Item.all
     unless @items.blank?
@@ -18,12 +20,10 @@ class ItemsController < ApplicationController
       @card_info = customer.cards.retrieve(@card.card_token)
       @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
       @card_logo = "material/pict/#{@card_info.brand}.svg"
-    end
   end
 
   def pay
-    @item = Item.find(params[:id])
-    @card = CreditCard.where(user_id: current_user.id).first
+    find_card
     if @card.blank?
       redirect_to new_credit_card_path
     else
@@ -48,7 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def get_categories
@@ -69,6 +68,14 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image]).merge(seller_id: current_user.id, trading_status: 1)
+  end
+
+  def find_current_item
+    @item = Item.find(params[:id])
+  end
+
+  def find_card
+    @card = CreditCard.where(user_id: current_user.id).first
   end
 
 end
