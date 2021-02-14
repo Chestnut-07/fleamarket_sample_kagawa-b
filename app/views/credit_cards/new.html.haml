@@ -1,25 +1,25 @@
 .SellContainer
   %header.SellHeader
     %h1
-      = link_to image_tag("material/logo/logo.png", alt: "サンプル画像"), "/"
+      = link_to image_tag("material/logo/logo.png", alt: "サンプル画像"), root_path
   %main.CardNewContainer
     %section.ResistCard
       %h2 支払い方法
-    = form_with model: nil, local: true do |f|
+    = form_with model: @credit_card, id: "card_form", local: true do |f|
       .CardFormPanel
         .CardInputField
           .CardInputField__heading
             %label{for: "card_card_number"} カード番号
             %span.Require 必須
           .CardInputField__form
-            = f.text_field :card_number, id: "card_number_form", placeholder: "1234 5678 1234 5678", required: true
-          = image_tag 'material/pict/visa_logo.svg', class: 'CardLogo'
-          = image_tag 'material/pict/master_card_logo.svg', class: 'CardLogo'
+            = f.text_field :card_number, id: "card_number_form",maxlength: 16, placeholder: "1234 5678 1234 5678", required: true
+          = image_tag 'material/pict/Visa.svg', class: 'CardLogo'
+          = image_tag 'material/pict/MasterCard.svg', class: 'CardLogo'
           = image_tag 'material/pict/saison_card_logo.svg', class: 'CardLogo'
-          = image_tag 'material/pict/jcb_logo.svg', class: 'CardLogo'
-          = image_tag 'material/pict/american_express_logo.svg', class: 'CardLogo'
-          = image_tag 'material/pict/diners_logo.svg', class: 'CardLogo'
-          = image_tag 'material/pict/discover_card_logo.svg', class: 'CardLogo'
+          = image_tag 'material/pict/JCB.svg', class: 'CardLogo'
+          = image_tag 'material/pict/American Express.svg', class: 'CardLogo'
+          = image_tag 'material/pict/Diners Club.svg', class: 'CardLogo'
+          = image_tag 'material/pict/Discover.svg', class: 'CardLogo'
         .CardInputField
           .CardInputField__heading
             %label{for: "card_exp_month"} 有効期限
@@ -27,7 +27,7 @@
           .CardInputField__form
             = f.select :exp_month, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], { include_blank: "---" }, { id: "exp_month_form", class: "ExpDate", required: true }
             %span.ApartMonth 月
-            = f.select :exp_year, @exp_year, { include_blank: "---" }, { id: "exp_year_form", class: "ExpDate", required: true }
+            = f.select :exp_year, @exp_year, { include_blank: "---" }, { id: "exp_year_form", type: "text", class: "ExpDate", required: true }
             %span.ApartYear 年
         .CardInputField
           .CardInputField__heading
@@ -38,7 +38,7 @@
           .CardInputField__annotation
             = icon('fas', 'question-circle')
             カード裏面の番号とは？
-        = f.submit "登録する", class: "DefaultBtn BlueBtn"
+        = f.submit "登録する", id: "card_token_submit", class: "DefaultBtn BlueBtn"
         = link_to credit_cards_path, class: "BackBtn" do
           もどる
   %footer.SellFooter

@@ -8,14 +8,15 @@
           %figure
             = image_tag 'material/icon/member_photo_noimage_thumb.png'
           %h2.Bold
-            山田太郎
+            = @user.nickname
           .TradeCount
             .TradeCount__segment
               評価
               %span.Bold 0
             .TradeCount__segment
               出品数
-              %span.Bold 0
+              %span.Bold
+                = @selling_item
       %section.MyPageContent
         %h2.MyPageContent__title 出品した商品
         %ul.ContentTabs

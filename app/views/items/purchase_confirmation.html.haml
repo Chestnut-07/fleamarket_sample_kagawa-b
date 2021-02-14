@@ -7,23 +7,36 @@
       .buymain-lists
         .buymain-lists-block
           .buymain-lists-left
-            =image_tag 'dami.png'
-            %p カード
+            =image_tag @item.item_image.image.url
+            %p
+              = @item.name
           .buymain-lists-right
             %p.p-left 送料別(税込)
-            %p.p-right ￥500
+            %p.p-right
+              ￥
+              = @item.price
       .buymain-payment
         .buymain-payment-block
           .buymain-payment-left
             %p 支払い金額
           .buymain-payment-right
-            %p ￥500
+            %p
+              ￥
+              = @item.price
       .buymain-method
         %h2 支払い方法
-        .buymain-method-block
-          %p ************4242
-          %p 有効期限 03/21
-          =image_tag 'https://upload.wikimedia.org/wikipedia/commons/5/53/Visa_2014_logo_detail.svg'  
+        - if @card.blank?
+          = link_to new_credit_card_path, class: "buymain-method-newcard" do
+            登録してください
+        - else
+          .buymain-method-block
+            %p<>
+              ************
+              = @card_info.last4
+            %p
+              有効期限
+              = @card_exp
+            =image_tag @card_logo
       .buymain-address
         %h2 配送先
         .buymain-address-block
@@ -34,6 +47,6 @@
           .buymain-address-right
             %p 変更する >
       .buymain-perchase
-        =form_with local: true do |f|
-          =f.submit '購入する'
+        = link_to pay_items_path(@item.id), class: "DefaultBtn BlueBtn", method: :post do
+          購入する
 = render "users/advertising_&_footer"
