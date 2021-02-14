@@ -1,11 +1,10 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 $white-color: #fff;
 $gray-color: #ccc;
 $red-color: #EA352D;
 $teal-color: teal;
+$blue-color:  #0099e8;
+$blue-green: #3CCACE;
 
 .content-sign-up {
  
@@ -14,13 +13,14 @@ $teal-color: teal;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
-.header {
+.header_registration {
   height: 200px;
 }
 
 
 .main {
   display: block;
+  box-sizing: border-box
 }
 
 .section {
@@ -109,11 +109,112 @@ $teal-color: teal;
   border: 1px solid $teal-color;
   color: $white-color;
   padding: 20px;
-  margin-top: 50px;
   width: 500px;
   cursor: pointer;
+  margin:30px;
 }
 
 .footer {
   height: 250px;
 }
+
+.content {
+  width: 456px;
+  margin: 0 auto;
+  background-color: $white-color;
+  .content-message {
+    padding: 40px 64px;
+    text-align: center;
+    p {
+      font-size: 14px;
+    }
+  }
+  .content-logo {
+    display: block;
+    margin: 8px 0 0;
+    border-radius: 4px;
+    border: 1px solid $blue-color;
+    background: $blue-color;
+    color: $white-color;
+    line-height: 40px;
+    text-decoration: none;
+  }
+  .content-list {
+    border-top: 1px solid #eee;
+    padding: 32px 64px;
+  }
+}
+
+.content-btn_g {
+  margin: 16px 0 0;
+  border: #979797 solid 1px;
+  color: #333;
+  display: block;
+  text-align: center;
+  line-height: 48px;
+  background: $white-color;
+  border-radius: 5px;
+  position: relative;
+}
+ .content-btn_f {
+    margin: 16px 0 0;
+    background: #385185;
+    color: $white-color;
+    display: block;
+    line-height: 48px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+
+  .content-btn_a {
+    margin: 15px 0 0;
+    background: #000;
+    color: $white-color;
+    display: block;
+    line-height: 48px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .content-icon {
+    font-size: 20px;
+    top: 30%;
+    left: 16px;
+    position: absolute;
+    font-size: 20px;
+  }
+  
+  .content-foot {
+    margin-top: 50px;
+    .content-form {
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: $white-color;
+      line-height: 1.5;
+      font-size: 16px;
+      width: 100%;
+      margin: 30px 0 0;
+    }
+    .btn {
+      background: $blue-green;
+      border: 1px solid $blue-green;
+      color: $white-color;
+      height: 48px;
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .note {
+    color: $blue-color;
+    text-decoration: none;
+    display: block;
+    margin: 40px 0 0;
+    cursor: pointer;
+  }
