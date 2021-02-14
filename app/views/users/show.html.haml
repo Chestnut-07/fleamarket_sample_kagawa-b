@@ -1,4 +1,7 @@
 = render "top_header"
+.breadcrumbs_logo
+  - breadcrumb :user 
+  = breadcrumbs separator: " &rsaquo; ",class:"logo"
 %main.UserShow
   .BackBoard
     = render "side_bar"

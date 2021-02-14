@@ -1,5 +1,8 @@
+=render"users/top_header"
 .content-sign-up
-  .header
+  .breadcrumbs_logo
+    - breadcrumb :New 
+    = breadcrumbs separator: " &rsaquo; ",class:"logo"
   .main
     .section
       %h2.main-logo 新規ユーザー登録

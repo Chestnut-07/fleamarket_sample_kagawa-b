@@ -1,9 +1,15 @@
 crumb :root do
-  link "ホームページ", root_path
+  link "トップページ", root_path
 end
 
-crumb :mypage do
+crumb :user do
   link "マイページ",user_path
+  parent :root
+end
+
+crumb :New do
+  link"新規登録",new_user_registration_path
+  parent :root
 end
 
 # crumb :projects do
