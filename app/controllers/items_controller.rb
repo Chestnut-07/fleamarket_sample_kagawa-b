@@ -12,14 +12,22 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
-    @item = Item.find(params[:id])
-    @card = CreditCard.where(user_id: current_user.id).first
-    unless @card.blank?
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      customer = Payjp::Customer.retrieve(@card.customer_token)
-      @card_info = customer.cards.retrieve(@card.card_token)
-      @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
-      @card_logo = "material/pict/#{@card_info.brand}.svg"
+    if !user_signed_in?
+      redirect_to item_path(@item.id), alert: "ログインしてください。"
+    elsif current_user.id == @item.seller_id
+      redirect_to item_path(@item.id), alert: "自身で出品した商品は購入できません。"
+    elsif @item.trading_status == 2
+      redirect_to item_path(@item.id), alert: "この商品は売り切れです。"
+    else
+      find_card
+      unless @card.blank?
+        Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+        customer = Payjp::Customer.retrieve(@card.customer_token)
+        @card_info = customer.cards.retrieve(@card.card_token)
+        @card_exp = "#{sprintf("%02d",@card_info.exp_month)} / #{@card_info.exp_year%100}"
+        @card_logo = "material/pict/#{@card_info.brand}.svg"
+      end
+    end
   end
 
   def pay
