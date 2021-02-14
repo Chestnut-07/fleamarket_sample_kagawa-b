@@ -3,15 +3,17 @@
     .items__show--name
       = @item.name
     .items__show--image
-      = image_tag "/images/test_image.jpg"
+      = image_tag @item.item_image.image.url
     .items__show--price
-      = @item.price
+      = "¥#{@item.price}"
     .items__show--tax
       = @item.shipping_fee_payer[:name]
     .items__show--btn
-      - if current_user == @item.seller
+      - if @item[:trading_status] == 2
+        .no_btn.btn 売り切れました
+      - elsif user_signed_in?&&current_user.id == @item.seller_id
         = link_to "商品を編集する", "#", class: "edit_btn btn"
-        = link_to "商品を削除する", "#", class: "delete_btn btn"
+        = link_to "商品を削除する", item_path(@item), method: :delete, class: "delete_btn btn"
       - else
         = link_to "購入画面に進む", "#", class: "purchase_btn btn"
     .items__show--sentence
@@ -28,7 +30,12 @@
           カテゴリー
         .items__show--info-category_real.c
           .text
-            衣類
+            %p
+              = @item.category.root[:name]
+            %p
+              = @item.category.parent[:name]
+            %p
+              = @item.category[:name]
       .items__show--info-condition.b
         .items__show--info-condition_type.a
           商品の状態
@@ -41,12 +48,6 @@
         .items__show--info-tax_real.c
           .text
             = @item.shipping_fee_payer[:name]
-      .items__show--info-howto.b
-        .items__show--info-howto_type.a
-          配送の方法
-        .items__show--info-howto_real.c
-          .text
-            = @item.delivery[:name]
       .items__show--info-location.b
         .items__show--info-location_type.a
           発送元の地域
