@@ -2,6 +2,13 @@ $border-color: #efefef;
 $view-background-color: whitesmoke;
 $str-line-height: 140%;
 $symbol-color: #3CCACE;
+$white-color: #fff;
+$gray-color: #ccc;
+$red-color: #EA352D;
+$teal-color: teal;
+$blue-color:  #0099e8;
+$blue-green: #3CCACE;
+
 @mixin apple_google_btn {
   display: flex;
   .appbtn, .googlebtn {
