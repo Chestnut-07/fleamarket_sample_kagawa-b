@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # @item = Item.find(params[:id])
   end
 
   def get_categories
@@ -36,7 +35,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @item = Item.find(params[:id])
+    @grandchild = Category.find(@item.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @item.build_item_image
   end
 
   def update
