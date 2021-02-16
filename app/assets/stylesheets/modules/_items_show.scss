@@ -8,6 +8,7 @@
     border: 1px solid gray;
     margin: 30px auto;
     padding: 0 20px;
+    background-color: #fff;
     &--name{
       text-align: center;
       margin-top: 20px;
@@ -148,6 +149,7 @@
     }
     &--send{
       position: relative;
+      align-items: center;
       .send{
         width: 300px;
         height: 40px;
@@ -155,6 +157,7 @@
         margin: 20px auto;
         display: block;
         border: none;
+        line-height: 2px;
         background-color: #33cc99;
       }
       .fukidasi{

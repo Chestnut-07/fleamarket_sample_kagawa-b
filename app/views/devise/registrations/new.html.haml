@@ -1,5 +1,5 @@
 .content-sign-up
-  .header_registration
+  = render "items/resister_header"
   .main
     .section
       %h2.main-logo 新規ユーザー登録
@@ -63,4 +63,4 @@
             %label.name-user 電話番号 
             =d.text_field :phone_number,class:"name-form",placeholder: "例）000-0000-0000"
           =f.submit "登録する", class:"send"
-    .footer
+    = render "items/resister_footer"

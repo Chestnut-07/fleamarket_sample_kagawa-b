@@ -5,8 +5,8 @@
     %title FleamarketSampleKagawaB
     = csrf_meta_tags
     = csp_meta_tag
+    = include_gon(:init => true)
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = include_gon
     = javascript_include_tag 'application'
     = javascript_include_tag 'https://js.pay.jp/v1/'
   %body
