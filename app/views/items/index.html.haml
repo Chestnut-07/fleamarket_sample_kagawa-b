@@ -90,8 +90,11 @@
         = link_to root_path do
           %h3.ListHeading 新規投稿商品
       .ItemLists
-        - @new_items.each do |item|
-          = render partial: "item", locals: { item: item }
+        - if @items.blank?
+          %p まだ商品がありません
+        - else 
+          - @new_items.each do |item|
+            = render partial: "item", locals: { item: item }
   %section.ItemIndexContainer
     %h2.ItemIndexHeading
       ピックアップカテゴリー
@@ -99,8 +102,12 @@
       .IndexCategory
         = link_to root_path do
           %h3.ListHeading 
-            = @pickup_items[0].category.root.name
+            - unless @pickup_items.blank?
+              = @pickup_items[0].category.root.name
       .ItemLists
-        - @pickup_items.each do |item|
-          = render partial: "item", locals: { item: item }
+        - if @pickup_items.blank?
+          %p まだ商品がありません
+        - else 
+          - @pickup_items.each do |item|
+            = render partial: "item", locals: { item: item }
 = render "users/advertising_&_footer"

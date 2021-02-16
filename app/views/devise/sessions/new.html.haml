@@ -1,5 +1,5 @@
 .content-sign-up
-  .header
+  = render "items/resister_header"
   .main
     .content
       .content-message
@@ -20,4 +20,4 @@
           =f.password_field :password,class:"content-form",placeholder: "パスワード"
           =f.submit class:"btn",value: "ログイン"
         =link_to 'パスワードをお忘れの方', '#',class:"note"
-  .footer
+  = render "items/resister_footer"

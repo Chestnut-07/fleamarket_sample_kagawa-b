@@ -1,0 +1,28 @@
+= render "users/top_header"
+%main.CardShow
+  .BackBoard
+    = render "users/side_bar"
+    .MainBody
+      .PayMethod
+        %section.Payment
+          %h2.Payment__heading
+            支払い方法
+        .Method
+          %section.Method__section
+            .ResistCard
+              = icon("fas", "check-circle")
+              .ResistCard__info
+                %p<>
+                  ************
+                  = @card_info.last4
+                %p
+                  有効期限
+                  = @card_exp
+                = image_tag @card_logo, class: 'CardLogo'
+              = link_to credit_card_path(current_user), class: "CardDeleteBtn", method: :delete do
+                削除する
+          %section.Method__section.RJustify
+            = link_to "#" do
+              %span 支払い方法について
+              = icon('fas', 'angle-right')
+= render "users/advertising_&_footer"
