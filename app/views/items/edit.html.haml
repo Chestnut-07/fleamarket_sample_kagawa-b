@@ -16,7 +16,7 @@
           .FormItemPanel__Imagebox
             = f.fields_for :item_image do |file|
               = file.label :image, class: "FormItemPanel__Inputimage" do
-                = file.file_field :image, value: "#{@item.item_image.image}", class: 'FormItemPanel__Hidden', required: true
+                = file.file_field :image, value: "#{@item.item_image.image.url}", class: 'FormItemPanel__Hidden', required: true
                 .FormItemPanel__Cen
                   = icon("fa","camera", class:"FormItemPanel__Icon")
                   %p.FormItemPanel__Image-innerText
