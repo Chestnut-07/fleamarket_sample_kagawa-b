@@ -73,6 +73,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
+  
   def destroy
     item = Item.find(params[:id])
     if user_signed_in? && current_user.id == item.seller.id

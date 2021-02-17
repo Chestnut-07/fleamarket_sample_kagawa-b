@@ -5,9 +5,9 @@
         = link_to root_path do
           = image_tag 'material/logo/logo.png', class: 'TopLogo'
       .SearchForm
-        = form_with url:'#', class: "SearchForm__form", method: :get, local: true do |f|
-          = f.search_field :name, class: "SearchForm__area", placeholder: "キーワードから探す"
-          = f.label :name, class: "SearchForm__icon" do
+        = form_with(url: search_items_path, local: true, method: :get, class: "SearchForm__form") do |f|
+          = f.search_field :keyword, class: "SearchForm__area", placeholder: "キーワードから探す"
+          = f.label :keyword, class: "SearchForm__icon" do
             = image_tag 'material/icon/icon-search 1.png', class: 'SearchForm__image'
             = f.submit class: "SearchForm__btn"
     .TopContainer__listBar
