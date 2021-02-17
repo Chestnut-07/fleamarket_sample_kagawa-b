@@ -1,2 +1,6 @@
-- @items.each do |item| 
-  = render partial: "item", locals: { item: item } 
+.Search_name
+  #{params[:keyword]}の検索結果
+  #{@items.count}件
+.ItemLists
+  - @items.each do |item| 
+    = render partial: "item", locals: { item: item } 
