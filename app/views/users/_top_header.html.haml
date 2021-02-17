@@ -27,7 +27,7 @@
               = icon('fas', 'star')
               お気に入り一覧(工事中)
           %li.RightList__item.RightList__item--member
-            = link_to user_path(current_user) do
+            = link_to mypage_path do
               = image_tag 'material/icon/member_photo_noimage_thumb.png', class: 'MemberImage'
               %span マイページ
         - else
