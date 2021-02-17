@@ -84,6 +84,14 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'mini_magick'
 
+gem 'payjp'
+
 gem 'jquery-rails'
+
+gem 'dotenv-rails'
+
+gem 'gon'
+
+gem 'toastr-rails'
 
 gem 'fog-aws'

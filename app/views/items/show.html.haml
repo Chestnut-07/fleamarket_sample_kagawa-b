@@ -1,3 +1,4 @@
+= render "users/top_header"
 .items
   .items__show
     .items__show--name
@@ -15,7 +16,7 @@
         = link_to "商品を編集する", "#", class: "edit_btn btn"
         = link_to "商品を削除する", item_path(@item), method: :delete, class: "delete_btn btn"
       - else
-        = link_to "購入画面に進む", "#", class: "purchase_btn btn"
+        = link_to "購入画面に進む",  purchase_confirmation_items_path(@item.id), class: "purchase_btn btn"
     .items__show--sentence
       = @item.introduction
     .items__show--info
@@ -229,3 +230,4 @@
               %p
                 (税込） 
           = icon('fas', 'star', class: "star")
+= render "users/advertising_&_footer"

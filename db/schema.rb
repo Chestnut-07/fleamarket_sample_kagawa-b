@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2021_02_13_095048) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_token", null: false
+    t.string "card_token", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
+  end
+
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
     t.integer "prefecture_id", null: false
@@ -78,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_095048) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "credit_cards", "users"
   add_foreign_key "destinations", "users"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
