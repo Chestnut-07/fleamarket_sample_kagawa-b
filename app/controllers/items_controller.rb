@@ -77,7 +77,6 @@ class ItemsController < ApplicationController
     @grandchild = Category.find(@item.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
-    @item.update_item_image
   end
 
   def update
