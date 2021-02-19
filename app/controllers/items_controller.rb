@@ -107,6 +107,11 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image]).merge(seller_id: current_user.id, trading_status: 1)
   end
 
+  def item_update_params
+    params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id, trading_status: 1)
+  end
+
+
   def find_current_item
     @item = Item.find(params[:id])
   end
