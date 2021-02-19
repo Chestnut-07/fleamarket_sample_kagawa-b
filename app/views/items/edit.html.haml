@@ -2,6 +2,11 @@
   = render "resister_header"
   %main.SellNewContainer
     = form_with model: @item, html: {class: "RegistrationForm"}, local: true do |f|
+      -if @item.errors.any? 
+        .alert
+          %ul
+            -@item.errors.full_messages.each do |message| 
+              %li= message
       .FormItemPanel
         %label
           出品画像
@@ -14,7 +19,7 @@
           .FormItemPanel__Imagebox
             = f.fields_for :item_image do |file|
               = file.label :image, class: "FormItemPanel__Inputimage" do
-                = file.file_field :image, value: "#{@item.item_image.image.url}", class: 'FormItemPanel__Hidden', required: true
+                = file.file_field :image, class: 'FormItemPanel__Hidden'
                 .FormItemPanel__Cen
                   = icon("fa","camera", class:"FormItemPanel__Icon")
                   %p.FormItemPanel__Image-innerText
