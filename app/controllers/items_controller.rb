@@ -68,6 +68,7 @@ class ItemsController < ApplicationController
     if @item.valid? && @item.save
       redirect_to root_path
     else
+      @item.build_item_image
       render :new
     end
   end
