@@ -86,6 +86,14 @@ gem 'mini_magick'
 
 gem 'gretel'
 
+gem 'payjp'
+
 gem 'jquery-rails'
+
+gem 'dotenv-rails'
+
+gem 'gon'
+
+gem 'toastr-rails'
 
 gem 'fog-aws'

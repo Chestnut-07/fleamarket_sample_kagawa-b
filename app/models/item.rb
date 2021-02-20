@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   has_one :item_image, dependent: :destroy
   accepts_nested_attributes_for :item_image, allow_destroy: true
+  validates_associated :item_image
   belongs_to :category
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :condition
@@ -23,5 +24,14 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :preparation_day_id
     validates :trading_status
+  end
+
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
   end
 end

@@ -6,10 +6,7 @@
         .alert
           %ul
             -@item.errors.full_messages.each do |message| 
-              %li
-                - if message.include?("image")
-                  %p
-                    写真を投稿してください
+              %li= message
       .FormItemPanel
         %label
           出品画像
@@ -55,7 +52,10 @@
             カテゴリー名
           %span.FormItemPanel__Require
             必須
-          = f.collection_select(:category_id, Category.roots, :id, :name, { include_blank: '--選択してください--'}, { class: "categories", required: true})
+          = f.collection_select(:category_id, Category.roots, :id, :name, { include_blank: '--選択してください--',selected: @parent.id}, { class: "categories", required: true})
+          = f.collection_select(:category_id, Category.where(ancestry: "#{@parent.id}"), :id, :name, { include_blank: '--選択してください--',selected: @child.id}, { class: "categories", required: true})
+          = f.collection_select(:category_id, Category.where(ancestry: "#{@parent.id}/#{@child.id}"), :id, :name, { include_blank: '--選択してください--',selected: @grandchild.id}, { class: "categories", required: true})
+
         .FormItemPanel__Contentbox.FormItemPanel__Notfirst
           = f.label :condition_id do
             商品の状態
@@ -114,7 +114,7 @@
             ー
         .FormItemPanel__Mainfooter
           .FormItemPanel__Btnbox
-            = f.submit "出品する", class: "FormItemPanel__Btn FormItemPanel__Submit FormItemPanel__Nbtn"
+            = f.submit "編集する", class: "FormItemPanel__Btn FormItemPanel__Submit FormItemPanel__Nbtn"
             = link_to "下書きに保存", "/", class: "FormItemPanel__Btn FormItemPanel__Draft FormItemPanel__Nbtn"
             = link_to "戻る", "/", class: "FormItemPanel__Nbtn"
         .FormItemPanel__Mainfooter

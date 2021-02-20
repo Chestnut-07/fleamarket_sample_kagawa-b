@@ -2,7 +2,7 @@
   %nav.SideNav
     %ul.SideNavBox
       %li
-        = link_to user_path(:id), class: "SideNavBox__list", rel: "nofollow" do
+        = link_to mypage_path, class: "SideNavBox__list", rel: "nofollow" do
           マイページ
           = icon('fas', 'chevron-right')
       %li
@@ -28,6 +28,6 @@
           支払い方法
           = icon('fas', 'chevron-right')
       %li
-        = link_to "#", class: "SideNavBox__list", rel: "nofollow", method: "delete" do
+        = link_to destroy_user_session_path, class: "SideNavBox__list", rel: "nofollow", method: "delete" do
           ログアウト
           = icon('fas', 'chevron-right')

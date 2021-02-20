@@ -2,11 +2,11 @@
 @import "variables";
 @import "perchase";
 @import "base";
+@import "error_messages";
 @import "modules/users_show";
 @import "modules/credit_cards_show";
 @import "modules/credit_cards_new";
 @import "modules/items_show";
-@import "modules/boxsizes";
 @import "modules/items_new";
 @import "new";
 @import "font-awesome-sprockets";
@@ -15,4 +15,6 @@
 @import "modules/side_bar_&_main_body";
 @import "modules/advertising_&_footer";
 @import "modules/items_index";
-@import "modules/flash";
+@import "modules/items_search";
+@import "toastr";
+@import "modules/resister_header_footer"

@@ -107,6 +107,24 @@
         vertical-align: middle;
         margin-left: 5px;
       }
+      .LogInBtn {
+        background-color: white;
+        border: 1px solid #0095ee;
+        border-radius: 4px;
+        color: #0095ee;
+        display: block;
+        font-size: 14px;
+        padding: 0 10px;
+      }
+      .SignUpBtn {
+        background-color: #3CCACE;
+        border: 1px solid #3CCACE;
+        border-radius: 4px;
+        color: white;
+        display: block;
+        font-size: 14px;
+        padding: 0 10px;
+      }
     }
   }
 }

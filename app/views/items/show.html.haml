@@ -1,3 +1,4 @@
+= render "users/top_header"
 .breadcrumbs_logo
   - breadcrumb :item ,@item
   = breadcrumbs separator: " &rsaquo; ",class:"logo"
@@ -15,10 +16,10 @@
       - if @item[:trading_status] == 2
         .no_btn.btn 売り切れました
       - elsif user_signed_in?&&current_user.id == @item.seller_id
-        = link_to "商品を編集する", "#", class: "edit_btn btn"
+        = link_to "商品を編集する", edit_item_path(@item), class: "edit_btn btn"
         = link_to "商品を削除する", item_path(@item), method: :delete, class: "delete_btn btn"
       - else
-        = link_to "購入画面に進む", "#", class: "purchase_btn btn"
+        = link_to "購入画面に進む",  purchase_confirmation_items_path(@item.id), class: "purchase_btn btn"
     .items__show--sentence
       = @item.introduction
     .items__show--info
@@ -232,3 +233,4 @@
               %p
                 (税込） 
           = icon('fas', 'star', class: "star")
+= render "users/advertising_&_footer"
