@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create, :purchase_confirmation]
-  before_action :find_current_item, only: [:purchase_confirmation, :pay, :show]
+  before_action :find_current_item, only: [:purchase_confirmation, :pay, :show, :edit, :update]
 
   def index
     @items = Item.all
@@ -52,7 +52,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @category = Category.roots
     @item.build_item_image
   end
 
@@ -69,14 +68,33 @@ class ItemsController < ApplicationController
     if @item.valid? && @item.save
       redirect_to root_path
     else
+      @item.build_item_image
       render :new
     end
   end
 
+  def edit
+    @grandchild = Category.find(@item.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+  end
+
+  def update
+    if @item.valid? && @item.update(item_update_params)
+      redirect_to root_path
+    else
+      @grandchild = Category.find(@item.category_id)
+      @child = @grandchild.parent
+      @parent = @child.parent
+      render :edit
+    end
+  end
+
+
   def search
     @items = Item.search(params[:keyword])
   end
-  
+
   def destroy
     item = Item.find(params[:id])
     if user_signed_in? && current_user.id == item.seller.id
@@ -93,6 +111,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image]).merge(seller_id: current_user.id, trading_status: 1)
   end
+
+  def item_update_params
+    params.require(:item).permit(:name, :introduction, :category_id, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price,item_image_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id, trading_status: 1)
+  end
+
 
   def find_current_item
     @item = Item.find(params[:id])
