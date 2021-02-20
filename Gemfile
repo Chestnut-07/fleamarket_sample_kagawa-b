@@ -84,6 +84,8 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'mini_magick'
 
+gem 'gretel'
+
 gem 'payjp'
 
 gem 'jquery-rails'

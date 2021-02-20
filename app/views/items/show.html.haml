@@ -1,4 +1,7 @@
 = render "users/top_header"
+.breadcrumbs_logo
+  - breadcrumb :item ,@item
+  = breadcrumbs separator: " &rsaquo; ",class:"logo"
 .items
   .items__show
     .items__show--name
