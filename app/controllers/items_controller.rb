@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new,:create, :purchase_confirmation]
+  before_action :authenticate_user!, only: [:new,:create, :purchase_confirmation, :edit ,:update]
   before_action :find_current_item, only: [:purchase_confirmation, :pay, :show, :edit, :update]
 
   def index
@@ -80,13 +80,15 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.valid? && @item.update(item_update_params)
-      redirect_to root_path
-    else
-      @grandchild = Category.find(@item.category_id)
-      @child = @grandchild.parent
-      @parent = @child.parent
-      render :edit
+    if user_signed_in? && current_user.id == @item.seller.id
+      if @item.valid? && @item.update(item_update_params)
+        redirect_to root_path
+      else
+        @grandchild = Category.find(@item.category_id)
+        @child = @grandchild.parent
+        @parent = @child.parent
+        render :edit
+      end
     end
   end
 
