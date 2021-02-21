@@ -81,7 +81,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if user_signed_in? && current_user.id == @item.seller.id
+    if current_user.id == @item.seller.id
       if @item.valid? && @item.update(item_update_params)
         redirect_to root_path
       else
