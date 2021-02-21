@@ -77,6 +77,7 @@ class ItemsController < ApplicationController
     @grandchild = Category.find(@item.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
+    redirect_to root_path unless current_user.id == @item.seller_id
   end
 
   def update
