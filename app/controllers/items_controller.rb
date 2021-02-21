@@ -81,15 +81,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if current_user.id == @item.seller.id
-      if @item.valid? && @item.update(item_update_params)
-        redirect_to root_path
-      else
-        @grandchild = Category.find(@item.category_id)
-        @child = @grandchild.parent
-        @parent = @child.parent
-        render :edit
-      end
+    if @item.valid? && @item.update(item_update_params)
+      redirect_to root_path
+    else
+      @grandchild = Category.find(@item.category_id)
+      @child = @grandchild.parent
+      @parent = @child.parent
+      render :edit
     end
   end
 
