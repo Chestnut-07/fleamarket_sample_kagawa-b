@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new,:create, :purchase_confirmation, :edit ,:update]
+  before_action :authenticate_user!, only: [:new,:create, :purchase_confirmation, :update]
   before_action :find_current_item, only: [:purchase_confirmation, :pay, :show, :edit, :update]
 
   def index
