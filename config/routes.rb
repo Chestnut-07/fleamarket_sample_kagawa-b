@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   end 
   root 'items#index'
 
-  resources :users, only: [:show]
+  get "mypage", to: "users#mypage"
   resources :credit_cards, only: [:index, :new, :create, :show, :destroy]
   get 'api/items/categories', to: 'items#get_categories'
-  resources :items, only: [:index, :new, :show, :create, :destroy] do
+  resources :items do
     collection do
       get "purchase_confirmation/:id", to: "items#purchase_confirmation", as: "purchase_confirmation"
       post "pay/:id", to: "items#pay", as: "pay"
